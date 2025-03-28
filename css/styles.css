@@ -1,0 +1,210 @@
+/* styles.css */
+body {
+    background: url('../img/bg.png') repeat-x;
+    background-color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.navbar .brand {
+    font-family: 'QlassikBold', sans-serif;
+    font-size: 24px;
+    color: rgb(138, 134, 134); /* wen hao 設為米色 */
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.content {
+    padding: 100px 0;
+}
+
+.page-title {
+    padding: 60px 0 30px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    font-family: 'QlassikBold', sans-serif;
+    color: #2c2c2c;
+}
+
+h1 {
+    font-size: 4em;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+#tagline {
+    font-size: 1.4em;
+    color: #666;
+    margin: 20px 0;
+}
+
+.project-details {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+pre {
+    background: #bfbdbd;
+    color: #393737;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.footer {
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+    padding: 30px 0;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.input-container label {
+    flex: 1;
+    min-width: 23%;
+    margin-right: 5px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#predictButton {
+    margin-right: 15px;
+}
+
+#predictionResult {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+pre {
+    background: #bfbdbd;
+    color: #393737;
+    padding: 10px;  /* 讓框變扁 */
+    border-radius: 5px;
+    max-height: 400px; /* 限制高度 */
+    overflow: auto;
+}
+
+
+.figure-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.figure-container img {
+    width: 100%;  /* 縮小一半 */
+    max-width: 800px; /* 限制最大寬度 */
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+.figure-container p {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+}
+
+.explanation {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    background-color: #f8f9fa;
+}
+
+/* 原有样式保持不變... */
+
+/* 新增头像样式 */
+.profile-photo-container {
+    text-align: right;
+    padding-top: 20px;
+}
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+
+    /* 讓圖片填滿區域但不變形 */
+    object-fit: cover;
+    /* 調整圖片往下移 */
+    object-position: center 10%; /* 20% 可自行調整 */
+}
+
+.profile-photo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 767px) {
+    .profile-photo-container {
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        object-position: center 10%; /* 手機版也往下移 */
+    }
+    
+    .span7, .span5 {
+        float: none;
+        width: 100%;
+    }
+}
+
+/* 新增 Russell 项目的特定样式 */
+.project-details h4 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+/* 表格样式（若需要） */
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.performance-table th, .performance-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.performance-table th {
+    background-color: #f8f9fa;
+}
+
+/* 响应式调整 */
+@media (max-width: 767px) {
+    .project-details .span6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

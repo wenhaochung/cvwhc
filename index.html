@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Wen-Hao Chung - Portfolio</title>
+    
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/media-queries.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,800" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body data-spy="scroll">
+
+<!-- Navigation -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#home">Ivan's Portfolio</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Russell 2000 Forecast</a></li>
+                    <li><a href="#portfolio2">Insurance Claim Prediction</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container content" id="home">
+    <!-- Home Section -->
+    <div class="row-fluid">
+        <div class="span7">
+            <div id="app-name">
+                <h1>Wen-Hao Chung</h1>
+            </div>
+            <div id="tagline">
+                Data Science  |  Statistics (Master of Science)  |  AI Enthusiast
+            </div>
+            <div id="description">
+                <p>I am a detail-oriented Data Scientist with a strong background in statistics and hands-on experience analyzing two million healthcare records.</p>
+                <p>As a multifaceted professional, I believe in continuous learning and growth with emerging technologies.</p>
+                <p>I have developed expertise in both data science and vendor management, along with project portfolio oversight, enabling me to contribute to both operational and strategic initiatives in this rapidly evolving AI-driven era.</p>
+            </div>
+        </div>
+            <!-- 新增头像区块 -->
+    <div class="span5 profile-photo-container">
+        <img src="static/profile.jpg" alt="Wen Hao Chung" class="profile-photo">
+    </div>
+    </div>
+
+    <!-- Resume Section -->
+    <div class="row-fluid" id="resume">
+        <h2 class="page-title">Resume</h2>
+        
+        <div class="span12">
+            
+            <h3>Education</h3>
+            <p></p>
+            <h4>British Columbia Institute of Technology</h4>
+            <p>Vancouver, Canada</p>
+            <ul>
+                <li>Certificate in Applied Data Analytics</li>
+            </ul>
+
+            <h4>National Chengchi University</h4>
+            <p>Taipei, Taiwan</p>
+            <ul>
+                <li>MSc in Statistics</li>
+                <li>Thesis: Aging population impact analysis using 2M+ healthcare records</li>
+            </ul>
+
+            <h3>Professional Experience</h3>
+            <p></p>
+            <h4>Cathay Life Insurance</h4>
+            <p>Data Scientist</p>
+            <ul>
+                <li>Analyzed two million records from the Health Insurance Research Database (HIRD) to assess disease prevalence and medical utilization rates across diverse age groups and regions.</li>
+                <li>Conducted a comparative analysis between HIRD data and official government statistics, demonstrating high representativeness.</li>
+                <li>Identified and addressed data limitations, such as the absence of death certificates, by establishing innovative criteria for death determination that closely aligned with official records.</li>
+                <li>Transformed HIRD data into actionable insights, enabling stakeholders to make data-driven decisions and tailor business strategies to meet the unique needs of different customer cohorts.</li>
+            </ul>
+
+            <h4>BNP Paribas Assurance</h4>
+            <p>Vendor management Specialist</p>
+            <ul>
+                <li>Coordinated between IT and key business functions, and managed third-party vendors, overseeing application implementation, and annually adapted agreements to comply with new insurance regulations.</li>
+                <li>Collaborated with the key stakeholders, product owners, external vendors to define solutions for end-to-end business problems, such as data integration between different applications via APIs.</li>
+                <li>Led contract renewals and designed invoice methodologies, including optimizing billing systems and enhancing overall operational efficiency through Agile collaboration on business processes.</li>
+            </ul>
+            <p>Project Portfolio Management and Budget Planning</p>
+            <ul>
+                <li>Collaborated with Finance on budget planning for over 50 projects annually, managing a total budget of approximately 3 million CAD across key areas including IFRS, Data Foundation, and e-Policy.</li>
+                <li>Facilitated BNP Taiwan’s budget approval process with headquarters by providing analyses of closing financial reports and established a robust budget control system and internal monitoring process for financial management.</li>
+                <li>Conducted monthly reviews of project milestones and costs with stakeholders, ensuring the accuracy and reasonableness of project budgets and resource allocations at each phase.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="row-fluid" id="portfolio">
+        <h2 class="page-title">Project I - Time Series</h2>
+        
+        <div class="span12">
+            <h3>Russell 2000 Index (Time-Series Prediction)</h3>
+            <div class="project-details">
+                <h4>Objective</h4>
+                <p>Develop a robust forecasting model for the Russell 2000 Index Close Price two days ahead, leveraging historical data and avoiding intraday dependencies.</p>
+                <h4>Dataset Overview</h4>
+                <p>Data Source: <a href="https://archive.ics.uci.edu/dataset/554/cnnpred+cnn+based+stock+market+prediction+using+a+diverse+set+of+variables">CNNpred Dataset</a></p>
+                <ul>
+                    <li>2010–2017 daily trading data for five major indices (DJI, NASDAQ, NYSE, Russell 2000, S&P 500), with standardized 1984×84 CSV structures and shared global market variables. (e.g., EMA, SMA, commodity prices, foreign exchange rates, and U.S. Treasury yields.)</li>
+                    <li><strong>Processed_RUSSELL.csv</strong>: Contains daily trading data for Russell 2000 Index.</li>
+                </ul>
+
+                <h4>Methodology</h4>
+                <p>Data Preprocessing Pipeline</p>
+                <ul>
+                    <li>Forecasting <strong>two days ahead</strong> ensures reliance on finalized historical data (e.g., closing price, volume) instead of real-time data, which may be unavailable until market close.</li>
+                    <li>Predict <strong>RUSSELL_Close_t+2</strong> using features from four indices (excluded RUSSELL CSV columns to prevent data leakage).</li>
+                </ul>
+                <p>Model Evaluation</p>
+                <ul>
+                    <li><strong>Feature Selection Methods:</strong> P-value, f_regression, RandomForest feature importance, and Correlation with target.</li>
+                    <li><strong>Models Tested:</strong> ElasticNet, SVR, DecisionTreeRegressor, AdaBoostRegressor, RandomForestRegressor, ExtraTreesRegressor, and a Stacked Model (ensemble of all six).</li>
+                    <li><strong>Best Approach: ElasticNet with PCA</strong> balanced interpretability and performance, leveraging standardized global variables while avoiding intraday data pitfalls.</li>
+                </ul>
+
+                <h4>Technical Highlights</h4>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h5>Key Techniques</h5>
+                        <ul>
+                            <li>Integrated trading volume (Rate of Change) to validate Exponential Moving Average(EMA) crossovers</li>
+                            <li>Holt-Winters Exponential Smoothing</li>
+                            <li>ElasticNet Regression</li>
+                            <li>Stacked Model</li>
+                            <li>Principal Component Analysis (PCA)</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h5>Model Performance</h5>
+                        <ul>
+                            <li>Root Mean Squared Error (RMSE): 46.322</li>
+                            <li>R² : 0.832</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <h4>Trading Strategy based on Golden Cross and Volume(RoC)</h4>
+
+<!-- Figure 8 -->
+
+<div class="figure-container">
+    <img src="static/EMAtrading.png" alt="Figure 9: Correlation between all variables">
+    <p><strong>Figure 1.</strong> RUSSELL 2000 Trading Strategy</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    <p>The strategy is based on the Moving Average Crossover:</p>
+        <ul>
+            <li><p><strong>Buy Signal (Golden Cross): </strong>When the short-term EMA (ema23) crosses above the long-term EMA (ema69), it indicates strengthening upward momentum. Traders interpret this as a bullish trend starting.</p>
+            <li><p><strong>Sell Signal (Death Cross): </strong>When the short-term EMA crosses below the long-term EMA, it signals weakening momentum and a potential bearish trend.</p>
+            <li><p>Volume acts as a "truth-teller" for price movements, reducing false signals, because it reflects market participation, and validates price movements. Therefore, considering RUSSELL_Volume improves accuracy.</p>
+        </ul>
+</div>
+
+<h4>By using Holt-Winters Exponential Smoothing (HWES) model to forecast the future values of the RUSSELL_Close index</h4>
+
+<div class="figure-container">
+    <img src="static/HoltWinter.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+    <p><strong>Figure 2.</strong> HWES Model</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    <p>This time series forecasting method is specifically designed to capture trends and seasonality in historical data, making it well-suited for financial markets where cyclical patterns and momentum shifts are common. A seasonal period of 300 days is defined, which assumes recurring patterns approximately every 300 trading days. Predictions for the next 120 days are generated using the trained model.</p>
+</div>
+
+<h4>Plotting the Predictions vs. Actual RUSSELL_Close_t+2 values from an 80-20 train-test split on a 45-degree line</h4>
+
+<div class="figure-container">
+    <img src="static/predActual.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+    <p><strong>Figure 3.</strong> Predictions versus Actual RUSSELL_Close_t+2</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    
+    <ul>
+        <li><p>Next, We predict RUSSELL_Close value two days ahead. The independent variables come from every column in five CSV files to predict RUSSELL_Close_t+2. However, to avoid Data Leakage, all columns from the RUSSELL CSV file will be excluded. </p>
+        <li><p>After determining the significant features, the next step is to decide which model provides the best predictive performance. We first evaluated the performance of six different models: ElasticNet, SVR, DecisionTreeRegressor, AdaBoostRegressor, RandomForestRegressor, and ExtraTreesRegressor. Then, we use a Stacked Model to combine these six models and compare their RMSE. We find that ElasticNet has a lower RMSE than the Stacked Model, so we chose ElasticNet. </p>
+        <li><p>Next, we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2. After plotting the predicted vs. actual RUSSELL_Close_t+2, we observe that the predictions closely align with the dashed reference line.</p>
+    </ul>
+</div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="container content" id="home">
+
+    <!-- Portfolio Section -->
+    <div class="row-fluid" id="portfolio2">
+        <h2 class="page-title">Project II - Machine Learning Classifier</h2>
+        
+        <div class="span12">
+            <h3>Insurance Claim Prediction Model</h3>
+            <div class="project-details">
+                <h4>Objective</h4>
+                <p>Develop XGBoost Classifier model to predict claim approvals using vehicle and repair data.</p>
+
+                <h4>Methodology</h4>
+                <p>Data Preprocessing Pipeline</p>
+                <ul>
+                    <li>Processed and cleaned 32,258 automotive claims records containing 23 raw features.</li>
+                    <li><strong>Implemented feature scaling based on data characteristics:</strong> applied RobustScaler for numerical features due to non-normal distribution and the presence of outliers, and used One-Hot Encoding for categorical features.</li>
+                    <li>Handled class imbalance in the target variable (Y = claim class (0,1) = (25,976, 6,281)) by applying SMOTE oversampling to balance the dataset.</li>
+                </ul>
+                <p>Feature Space Optimization</p>
+                <ul>
+                    <li>Conducted multi-criteria feature selection, using f_regression, Random Forest importance threshold (top 40%), and Pearson correlation.</li>
+                    <li>Evaluated selected feature combinations through grid search, 5-fold cross-validation on 80% training split and final accuracy on 20% teast set.</li>
+                    <li><strong>Final selection:</strong> 9 optimal features maximizing validation accuracy.</li>
+                </ul>
+
+                <h4>Technical Highlights</h4>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h5>Key Techniques</h5>
+                        <ul>
+                            <li>Forward Feature Selection(f_regression)</li>
+                            <li>Random Forest Classifier feature importances</li>
+                            <li>XGBoost Classifier model</li>
+                            <li>Robust Scaling</li>
+                            <li>Synthetic Minority Oversampling Technique(SMOTE)</li>
+                            <li>KFold cross-validation</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h5>Model Performance</h5>
+                        <ul>
+                            <li>Accuracy: 96.2%</li>
+                            <li>Recall: 85.4%</li>
+                            <li>Precision: 94.5%</li>
+                            <li>F1 Score: 89.7%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>Demo</h4>
+                <pre>
+                    <h1>Claim Prediction Demo</h1>
+                    <div class="input-container">
+                        <label>Case Anomaly (0 or 1): <input type="number" id="category_anomaly"></label>
+                        <label>Brand (Ford/Dacia): <input type="text" id="Maker"></label>
+                        <label>Model: <input type="text" id="Model"></label>
+                        <label>Number of Seats (2-20): <input type="number" id="Seat_num"></label>
+                    </div>
+                    <div class="input-container">
+                        <label>Number of Doors (2-7): <input type="number" id="Door_num"></label>
+                        <label>Repair Cost: <input type="number" id="repair_cost"></label>
+                        <label>Repair Time: <input type="number" id="repair_hours"></label>
+                        <label>Repair Complexity (1-4): <input type="number" id="repair_complexity"></label>
+                    </div>
+                    <div class="button-container">
+                        <button id="predictButton">Predict</button>
+                        <p id="result"></p>
+                        <p id="error"></p>
+                    </div>
+                    <script src="static/script.js"></script>
+                </pre>
+                <h4>Numerical Figures</h4>
+
+<!-- Figure 8 -->
+
+<div class="figure-container">
+    <img src="static/fig1_numeric.jpg" alt="Figure 9: Correlation between all variables"style="width: 70%;">
+    <p><strong>Figure 1.</strong> Numerical Figure Distribution</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    <p>For numeric features, check whether they follow a <strong> normal distribution </strong> and identify any <strong> outliers </strong> to determine the appropriate scaler to use. Since none of the features follow a normal distribution, and most of them contain outliers, using a <strong> Robust Scaler </strong> might be the better option to scale the variables. This helps mitigate the impact of extreme values and <strong> prevents regression coefficient distortion</strong> caused by extreme scale differences.</p>
+</div>
+
+<h4>Categorical Features</h4>
+
+<div class="figure-container">
+    <img src="static/fig2_cates.png" alt="Figure 8: Correlation between Y and predictors"style="width: 65%;">
+    <p><strong>Figure 2.</strong> Top 10 claim cases Brands</p>
+</div>
+
+<!-- Figure 9 -->
+<div class="figure-container">
+    <img src="static/fig3_cates.png" alt="Figure 9: Correlation between all variables"style="width: 65%;">
+    <p><strong>Figure 3.</strong> Top 10 claim approved ratio Brands</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    <ul>
+        <li><p>For <strong>categorical variable ‘Maker’</strong>, <strong> Ford </strong> is the highest amount of claim cases maker, and <strong> Ferrari </strong> and <strong> Dacia </strong> are the top two highest claim ratio makers.</p>
+        <li><p>Since the variable ‘Model’ has over 200 unique categories, applying <strong> One-Hot Encoding </strong> would create more than <strong> 200 additional columns </strong>, leading to <strong> dimensional explosion </strong>. This significantly increases computational cost and may result in model overfitting. To address this issue, we use <strong> Frequency Encoding </strong> to transform the Model variable. Moreover, before feeding the data ‘Model’ into the model, RobustScaler will be applied together with other numerical variables, ensuring a more stable and reliable transformation, because the frequency values may vary significantly across different Model categories. Directly using unscaled ‘Model_FreqEncoded’ could negatively impact the model.</p>
+    </ul>
+</div>
+
+<h4>Correlation Between the Independent Variables and Y(Claim)</h4>
+
+<div class="figure-container">
+    <img src="static/fig4_corr.png" alt="Figure 8: Correlation between Y and predictors"style="width: 90%;">
+    <p><strong>Figure 4.</strong> Correlation between all variables</p>
+</div>
+
+<!-- Figure 9 -->
+<div class="figure-container">
+    <img src="static/fig5_corr.png" alt="Figure 9: Correlation between all variables"style="width: 30%;">
+    <p><strong>Figure 5.</strong> Correlation between Y and predictors</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    <p>For the correlation between the independent variables and Y, after taking the <strong> absolute values </strong>, they are ranked from top to bottom in descending order of their correlation with Y. The variable <strong> category_anomaly </strong>has the highest correlation with Y. Additionally, <strong> Model_FreqEncoded and Maker_Ford </strong>are highly correlated, and <strong> repair_complexity </strong> also has a strong correlation with <strong> Maker_Ford </strong>. Therefore, category_anomaly, Model_FreqEncoded, Maker_Ford, and repair_complexity will be included in the Model Evaluation to run experiments and determine which combination yields the highest accuracy.</p>
+</div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- Footer -->
+<div class="footer container">
+    <div id="copyright">
+        &copy; 2025 Wen-Hao Chung. All rights reserved.
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-collapse.js"></script>
+<script src="js/bootstrap-scrollspy.js"></script>
+<script>
+$(document).ready(function(){
+    // Smooth scrolling
+    $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 50
+            }, 1000);
+        }
+    });
+
+    // Mobile menu toggle
+    $('.btn-navbar').click(function(){
+        $('.nav-collapse').toggleClass('in');
+    });
+});
+</script>
+
+</body>
+</html>
