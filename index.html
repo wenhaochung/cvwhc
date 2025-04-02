@@ -27,8 +27,8 @@
                 <ul class="nav pull-right">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Russell 2000 Forecast</a></li>
-                    <li><a href="#portfolio2">Insurance Claim Prediction</a></li>
+                    <li><a href="#portfolio">Project I</a></li>
+                    <li><a href="#portfolio2">Project II</a></li>
                 </ul>
             </div>
         </div>
@@ -47,9 +47,9 @@
                 Data Science  |  Statistics (Master of Science)  |  AI Enthusiast
             </div>
             <div id="description">
-                <p>I am a detail-oriented Data Scientist with a strong background in statistics and hands-on experience analyzing two million healthcare records.</p>
-                <p>As a multifaceted professional, I believe in continuous learning and growth with emerging technologies.</p>
-                <p>I have developed expertise in both data science and vendor management, along with project portfolio oversight, enabling me to contribute to both operational and strategic initiatives in this rapidly evolving AI-driven era.</p>
+                <p>&nbsp;&nbsp;I am a detail-oriented Data Scientist with a strong background in statistics and hands-on experience analyzing two million healthcare records.</p>
+                <p>&nbsp;&nbsp;As a multifaceted professional, I believe in continuous learning and growth with emerging technologies.</p>
+                <p>&nbsp;&nbsp;I have developed expertise in both data science and vendor management, along with project portfolio oversight, enabling me to contribute to both operational and strategic initiatives in this rapidly evolving AI-driven era.</p>
             </div>
         </div>
             <!-- 新增头像区块 -->
@@ -113,35 +113,92 @@
         <div class="span12">
             <h3>Russell 2000 Index (Time-Series Prediction)</h3>
             <div class="project-details">
+
                 <h4>Objective</h4>
-                <p>Develop a robust forecasting model for the Russell 2000 Index Close Price two days ahead, leveraging historical data and avoiding intraday dependencies.</p>
+                <p> &nbsp;&nbsp; The primary objective of this project is to develop a robust predictive framework for forecasting the <strong> Russell 2000 Index Close Price </strong> two days ahead (t+2). By leveraging historical data from multiple U.S. and international market indices, technical indicators, and macroeconomic variables, the model aims to provide actionable insights for investors while avoiding reliance on incomplete intraday data.</p>
+                <p><strong>Key Benefits:</strong> </p>
+                <ul>
+                    <li><strong> Practicality: </strong>  Predictions for t+2 allow full utilization of finalized daily data (e.g., closing prices, volume) without requiring real-time updates.</li>
+                    <li><strong> Risk Mitigation: </strong>  Integration of volume-based trend confirmation reduces false signals in trading strategies (e.g., Golden/Death Cross).</li>
+                    <li><strong> Scalability: </strong>  The framework can be extended to other indices or asset classes, e.g. DJI, NASDAQ, NYSE, S&P close.</li>
+                    <li><strong> Market Insight: </strong>  Analysis of small-to-mid-cap companies via the Russell 2000 offers a proxy for broader economic health.</li>
+                    <li><strong> Additional Insight: </strong>  The exclusion of Russell-specific features to prevent data leakage ensures generalizability and compliance with real-world deployment constraints.</li>
+                </ul>                
+                
                 <h4>Dataset Overview</h4>
                 <p>Data Source: <a href="https://archive.ics.uci.edu/dataset/554/cnnpred+cnn+based+stock+market+prediction+using+a+diverse+set+of+variables">CNNpred Dataset</a></p>
+                <p> &nbsp;&nbsp; The dataset comprises <strong>five CSV files (DJI, NASDAQ, NYSE, RUSSELL, S&P 500) </strong> from 2010–2017, each containing 1,984 rows × 84 columns.</p>
+                <p><strong>Key features include:</strong> </p>
                 <ul>
-                    <li>2010–2017 daily trading data for five major indices (DJI, NASDAQ, NYSE, Russell 2000, S&P 500), with standardized 1984×84 CSV structures and shared global market variables. (e.g., EMA, SMA, commodity prices, foreign exchange rates, and U.S. Treasury yields.)</li>
-                    <li><strong>Processed_RUSSELL.csv</strong>: Contains daily trading data for Russell 2000 Index.</li>
-                </ul>
+                    <li><strong>Basic Market Data: </strong> Date, Close, Volume (Rate of Change).</li>
+                    <li><strong>Technical Indicators: </strong> Momentum (mom, mom1–3), ROC, EMA.</li>
+                    <li><strong>Macroeconomic Variables: </strong> Treasury rates, bond spreads, commodity prices (Oil, Gold), FX rates.</li>
+                    <li><strong>Company Stock Prices: </strong> AAPL, AMZN, MSFT, etc.</li>
+                    <li><strong>International Indices & Futures: </strong> CAC 40, DAX, Nikkei.</li>
+                </ul> 
+                <p><strong>Key Variations:</strong> </p>
+                <ul>
+                    <li><strong>Index-Specific Futures</strong> (e.g., CAC-F in DJI, KOSPI-F in NASDAQ).</li>
+                    <li><strong>Consistency: </strong> Commodity and currency data (e.g., Brent, copper-F) are standardized across files.</li>
+                </ul> 
+                <p><strong>Data Limitations:</strong> </p>
+                <ul>
+                    <li><strong>Temporal Constraints: </strong> Data ends in 2017; newer market regimes (e.g., post-COVID) are unaddressed.</li>
+                </ul> 
 
                 <h4>Methodology</h4>
-                <p>Data Preprocessing Pipeline</p>
+                <p><strong>Trend Analysis & Trading Strategy</strong></p>
                 <ul>
-                    <li>Forecasting <strong>two days ahead</strong> ensures reliance on finalized historical data (e.g., closing price, volume) instead of real-time data, which may be unavailable until market close.</li>
-                    <li>Predict <strong>RUSSELL_Close_t+2</strong> using features from four indices (excluded RUSSELL CSV columns to prevent data leakage).</li>
-                </ul>
-                <p>Model Evaluation</p>
+                    <li><strong>Golden/Death Cross: </strong> 23-day EMA (short-term) and 69-day EMA (long-term) crossovers generate buy/sell signals.</li>
+                    <li><strong>Volume Validation: </strong> High trading volume (ROC) confirms trend legitimacy, reducing false breakouts.</li>
+                </ul> 
+                <p><strong>Time-Series Forecasting (HWES)</strong> </p>
                 <ul>
-                    <li><strong>Feature Selection Methods:</strong> P-value, f_regression, RandomForest feature importance, and Correlation with target.</li>
-                    <li><strong>Models Tested:</strong> ElasticNet, SVR, DecisionTreeRegressor, AdaBoostRegressor, RandomForestRegressor, ExtraTreesRegressor, and a Stacked Model (ensemble of all six).</li>
-                    <li><strong>Best Approach: ElasticNet with PCA</strong> balanced interpretability and performance, leveraging standardized global variables while avoiding intraday data pitfalls.</li>
+                    <li><strong>Holt-Winters Exponential Smoothing: </strong> Model assumes multiplicative trend/seasonality (300-day period). Achieved RMSE = 41.16 but lacks adaptability to sudden market shifts.</li>
+                </ul> 
+                <p><strong>Machine Learning for t+2 Prediction</strong> </p>
+                <ul>
+                    <li><strong>Feature Selection: </strong>
+                        	P-value Filtering (p < 0.05).
+                        &	Correlation (>80% with target).
+                        &	F-regression (top 25 ANOVA F-value features).
+                        &	Random Forest Importance (tree-based rankings).</li>
+                        
+                    <li><strong>Final Feature Set: </strong> Hybrid selection combining technical indicators (e.g., NASDAQ_Close, S&P_EMA_50), macroeconomic variables (DGS10, DTB4WK), and volume metrics.</li>
+                    <li><strong>Model Selection: </strong>
+                        	<strong>ElasticNet with PCA: </strong> Outperformed stacked models.
+                        and	<strong>TimeSeriesSplit: </strong> Ensured temporal integrity during cross-validation (avg. RMSE = 47.48).</li>
+                        
+                    <li><strong>Critical Additions: </strong>Avoiding Data Leakage: Excluded Russell-specific features and enforced time-series splits.</li>
+                </ul> 
+
+                <h4>Challenges and Solutions</h4>
+                <p><strong>Project Challenges:</strong></p>
+                <ul>
+                    <li>Predicting stock prices is inherently complex due to the multitude of influencing factors. This project focuses on forecasting the <strong> Russell 2000 Index Close Price </strong>using data from five major U.S. indices (DJI, NASDAQ, NYSE, S&P 500, RUSSELL). A critical challenge arises from the impracticality of predicting the next day’s close using today’s data, as incomplete or delayed intraday metrics (e.g., finalized closing prices, volume) may not be available before the next trading session.</li>
+                    <li>Additionally, financial time series like RUSSELL_Close are highly <strong> non-stationary </strong>, exhibiting <strong> volatility clustering </strong>and unpredictable shifts driven by external events (e.g., policy changes, geopolitical tensions). The reliance on historical patterns also introduces risks: while models like <strong> Holt-Winters Exponential Smoothing (HWES)</strong> assume recurring <strong> trends and seasonality </strong>, real-world markets often deviate from such assumptions, especially during black swan events.</li>
+                    <li>Furthermore, the dataset’s high dimensionality (84 features across five indices) amplifies noise and <strong> multicollinearity </strong>, complicating feature selection.</li>
                 </ul>
+                <p><strong>Solutions:</strong></p>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;To address these challenges, a <strong> dual-method </strong>approach was implemented:</p>
+                <p> <strong>1.	Holt-Winters Exponential Smoothing (HWES):</strong></p>
+                <ul>
+                    <li>This time-series model was trained on six years of RUSSELL_Close data, assuming a <strong> multiplicative trend </strong> (trend=’mul’) and <strong> multiplicative seasonality </strong> (seasonal=’mul’) with a 300-day seasonal period. The model captured <strong> cyclical patterns </strong> (e.g., annual trends) and achieved an <strong> RMSE of 41.16</strong>. However, its rigidity in assuming fixed seasonality limits adaptability to sudden market disruptions.</li>
+                </ul>               
+                <p> <strong>2.	Machine Learning Regressors for t+2 Prediction:</strong></p>
+                <ul>
+                    <li>To bypass reliance on incomplete daily data, the target was shifted to RUSSELL_Close_t+2, allowing the use of finalized prior-day metrics. To prevent <strong> data leakage </strong>, all Russell-specific features were excluded, and predictors were restricted to DJI, NASDAQ, NYSE, and S&P 500 data. A hybrid feature selection strategy combined statistical significance (p-value < 0.05), correlation (>80%), and tree-based importance rankings. The final model, ElasticNet with PCA, reduced RMSE to 46.32 by addressing multicollinearity and overfitting.</li>
+                    <li><strong> Robust Validation</strong>: <strong> Time-series splits</strong>  replaced random K-fold to avoid future data leakage.</li>
+                </ul>   
+                <p> &nbsp;&nbsp;This <strong> dual methodology</strong>  balances theoretical assumptions (<strong> HWES seasonality</strong>) with empirical adaptability (<strong> machine learning</strong>), offering a pragmatic framework for financial forecasting.</p>
 
                 <h4>Technical Highlights</h4>
                 <div class="row-fluid">
                     <div class="span6">
                         <h5>Key Techniques</h5>
                         <ul>
-                            <li>Integrated trading volume (Rate of Change) to validate Exponential Moving Average(EMA) crossovers</li>
-                            <li>Holt-Winters Exponential Smoothing</li>
+                            <li>Exponential Moving Average(EMA) Crossovers</li>
+                            <li>Holt-Winters Exponential Smoothing (HWES)</li>
                             <li>ElasticNet Regression</li>
                             <li>Stacked Model</li>
                             <li>Principal Component Analysis (PCA)</li>
@@ -172,13 +229,13 @@
 <div class="explanation">
     <p>The strategy is based on the Moving Average Crossover:</p>
         <ul>
-            <li><p><strong>Buy Signal (Golden Cross): </strong>When the short-term EMA (ema23) crosses above the long-term EMA (ema69), it indicates strengthening upward momentum. Traders interpret this as a bullish trend starting.</p>
-            <li><p><strong>Sell Signal (Death Cross): </strong>When the short-term EMA crosses below the long-term EMA, it signals weakening momentum and a potential bearish trend.</p>
-            <li><p>Volume acts as a "truth-teller" for price movements, reducing false signals, because it reflects market participation, and validates price movements. Therefore, considering RUSSELL_Volume improves accuracy.</p>
+            <li><p><strong>Buy Signal (Golden Cross): </strong>When the short-term EMA (ema23) <strong>crosses above</strong> the long-term EMA (ema69), it indicates strengthening upward momentum. Traders interpret this as a bullish trend starting.</p>
+            <li><p><strong>Sell Signal (Death Cross): </strong>When the short-term EMA <strong>crosses below</strong> the long-term EMA, it signals weakening momentum and a potential bearish trend.</p>
+            <li><p>Volume acts as a "<strong>truth-teller</strong>" for price movements, reducing false signals, because it reflects <strong>market participation</strong>, and validates price movements. Therefore, considering RUSSELL_Volume(RoC) <strong>improves accuracy</strong>.</p>
         </ul>
 </div>
 
-<h4>By using Holt-Winters Exponential Smoothing (HWES) model to forecast the future values of the RUSSELL_Close index</h4>
+<h4>(method 1)By using Holt-Winters Exponential Smoothing (HWES) model to forecast the future values of the RUSSELL_Close index</h4>
 
 <div class="figure-container">
     <img src="static/HoltWinter.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
@@ -187,23 +244,64 @@
 
 <!-- Explanation -->
 <div class="explanation">
-    <p>This time series forecasting method is specifically designed to capture trends and seasonality in historical data, making it well-suited for financial markets where cyclical patterns and momentum shifts are common. A seasonal period of 300 days is defined, which assumes recurring patterns approximately every 300 trading days. Predictions for the next 120 days are generated using the trained model.</p>
+    <p>This time-series model was trained on six years of RUSSELL_Close data, assuming a <strong> multiplicative trend </strong> (trend=’mul’) and <strong> multiplicative seasonality </strong> (seasonal=’mul’) with a 300-day seasonal period. The model captured <strong> cyclical patterns </strong> (e.g., annual trends) and achieved an <strong> RMSE of 41.16</strong>. However, its rigidity in assuming fixed seasonality limits adaptability to sudden market disruptions.</p>
 </div>
 
-<h4>Plotting the Predictions vs. Actual RUSSELL_Close_t+2 values from an 80-20 train-test split on a 45-degree line</h4>
+<h4>(method 2)ElasticNet Regressor for t+2 Prediction: Plotting the Predictions vs. Actual RUSSELL_Close values on a 45-degree line</h4>
 
 <div class="figure-container">
     <img src="static/predActual.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 3.</strong> Predictions versus Actual RUSSELL_Close_t+2</p>
+    <p><strong>Figure 3.</strong> 2017 RUSSELL 2000 - Close Price</p>
 </div>
 
 <!-- Explanation -->
 <div class="explanation">
     
     <ul>
-        <li><p>Next, We predict RUSSELL_Close value two days ahead. The independent variables come from every column in five CSV files to predict RUSSELL_Close_t+2. However, to avoid Data Leakage, all columns from the RUSSELL CSV file will be excluded. </p>
-        <li><p>After determining the significant features, the next step is to decide which model provides the best predictive performance. We first evaluated the performance of six different models: ElasticNet, SVR, DecisionTreeRegressor, AdaBoostRegressor, RandomForestRegressor, and ExtraTreesRegressor. Then, we use a Stacked Model to combine these six models and compare their RMSE. We find that ElasticNet has a lower RMSE than the Stacked Model, so we chose ElasticNet. </p>
-        <li><p>Next, we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2. After plotting the predicted vs. actual RUSSELL_Close_t+2, we observe that the predictions closely align with the dashed reference line.</p>
+        <li><p>Next, We predict RUSSELL_Close value by using ElasticNet Regressor (the target was shifted to RUSSELL_Close_t+2), and we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2.</p>
+        <li><p>After utilizing <strong>80%</strong> of the data (i.e. <strong>2010 to 2016</strong>) to train the model, we proceeded to validate its performance by making predictions on the subsequent <strong>20%</strong> of the data (i.e. <strong>2017</strong>). To assess the accuracy of these predictions, we plotted the <strong>predicted vs. actual</strong> values of RUSSELL_Close_t+2, comparing them against the <strong>45-degree dashed reference line</strong>, which represents an ideal scenario where predictions perfectly match the actual values. Upon examining the plot, we observed that the predicted values <strong>closely align with</strong> this reference line, indicating that the model effectively captures the underlying trend in the data and demonstrates strong predictive performance.</p>
+    </ul>
+    <p>How to Interpret a Prediction vs. Actual Plot on a <strong>45-Degree Line</strong>?</p>
+    <ul>
+        <li><p>The <strong>X-axis</strong> represents the <strong>actual values</strong> (true outcomes).</p>
+        <li><p>The <strong>Y-axis</strong> represents the <strong>predicted values</strong> (model's output).</p>
+        <li><p>A <strong>dotted 45-degree diagonal line</strong> represents <strong>perfect predictions</strong>, meaning that if all points lie exactly on this line, the model's predictions are <strong>100% accurate</strong>.</p>
+        <li><p><strong>Overestimation</strong>: Most points are <strong>above</strong> the line → Model <strong>predicts too high</strong>.</p>
+        <li><p><strong>Underestimation</strong>: Most points are <strong>below</strong> the line → Model <strong>predicts too low</strong>.</p>
+        <li><p><strong>Weak Model Performance</strong>: The points are <strong>widely scattered</strong>, far from the 45-degree line.</p>
+    </ul>
+
+</div>
+
+<div class="figure-container">
+    <img src="static/variables.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+    <p><strong>Figure 4.</strong> Final Feature Set</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    <p>How to select <strong>features</strong>?</p>
+    <ul>
+        <li><p>To ensure an optimal feature set for the predictive model, multiple feature selection techniques were employed. These methods included <strong>P-value Filtering</strong>, where features with a p-value less than 0.05 were retained; <strong>Correlation Analysis</strong>, selecting variables with an absolute correlation greater than 80% with the target; <strong>F-regression</strong>, which prioritized the top 25 features based on ANOVA F-values; and <strong>Random Forest Importance</strong>, a tree-based ranking approach to identify the most influential predictors. </p>
+        <li><p>The features that <strong>appeared consistently across these methods</strong> were selected as the initial set. To further refine the model, different feature group combinations were tested, evaluating their performance based on the <strong>lowest</strong> Root Mean Square Error (<strong>RMSE</strong>).</p>
+        <li><p>The final feature set was a hybrid selection incorporating key technical indicators (e.g., NASDAQ_Close, S&P_EMA_50), macroeconomic variables (e.g., DGS10, DTB4WK), and volume metrics, ensuring a balanced mix of market trends, economic conditions, and liquidity measures. A complete list of selected variables is presented in <strong>Figure 4</strong>.</p>
+    </ul>
+</div>
+
+<div class="figure-container">
+    <img src="static/stacked.png" alt="Figure 8: Correlation between Y and predictors"style="width: 30%;">
+    <p><strong>Figure 5.</strong> Stacked Model RMSE versus Base models</p>
+    <img src="static/model.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+    <p><strong>Figure 6.</strong> Model Evaluation</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+    <p><strong>Model Evaluation</strong></p>
+    <ul>
+        
+        <li><p>After determining the significant features, the next step is to decide which model provides the best predictive performance. We first evaluated the performance of six different models: ElasticNet, SVR, DecisionTreeRegressor, AdaBoostRegressor, RandomForestRegressor, and ExtraTreesRegressor. Then, we use a Stacked Model to combine these six models and compare their RMSE. We find that ElasticNet has a lower RMSE than the Stacked Model, so we chose ElasticNet, as shown in <strong>Figure 5</strong>. </p>
+        <li><p>Next, we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2, as shown in <strong>Figure 6</strong>.</p>
     </ul>
 </div>
             </div>
@@ -220,31 +318,102 @@
         <div class="span12">
             <h3>Insurance Claim Prediction Model</h3>
             <div class="project-details">
+
                 <h4>Objective</h4>
-                <p>Develop XGBoost Classifier model to predict claim approvals using vehicle and repair data.</p>
+                <p> &nbsp;&nbsp; The primary objective of this project is to develop a <strong> XGBoost Classifier </strong>model to predict insurance claim approvals based on vehicle and repair-related factors. The model aims to automate the claim assessment process, reducing manual review efforts and operational costs.</p>
+                <p><strong>Key Benefits:</strong> </p>
+                <ul>
+                    <li><strong> Operational Efficiency: </strong>  Minimize time and labor spent on manual claim evaluations.</li>
+                    <li><strong> Fraud Mitigation: </strong>  Identify patterns indicative of fraudulent claims through data-driven insights.</li>
+                    <li><strong> Scalability: </strong>  Enable rapid processing of large claim volumes without compromising accuracy.</li>
+                    <li><strong> Consistency: </strong>  Ensure standardized decision-making across all claims, reducing human bias.</li>
+                    
+                </ul> 
+
+                <h4>Dataset Overview</h4>
+                <p><strong>Total Records:</strong>32,258 claims.</p>
+
+                
+                <p><strong>Features:</strong>23 variables, including:</p>
+                <ul>
+                    <li><strong>Vehicle Details: </strong> Maker, Model, Color, Engine Size, Fuel Type, Registration Year.</li>
+                    <li><strong>Accident/Repair Data:</strong> Breakdown Date, Repair Cost, Repair Hours, Repair Complexity.</li>
+                    <li><strong>Other Variables:</strong> Price, Seat/Door Count, Issue Type, Category Anomaly Flag.</li>
+                </ul>
+                <p><strong>Target Variable: Claim </strong> (binary: 1 = Approved, 0 = Denied).</p>
+
+                <p><strong>Key Observations:</strong></p>
+                <ul>
+                    <li>Minimal missing data (only 1 row with NaN values).</li>
+                    <li>High cardinality in the<strong>Model</strong> feature (200+ unique categories).</li>
+                    <li>Imbalanced target distribution (25,976 denied vs. 6,281 approved claims).</li>
+       
+                </ul>
 
                 <h4>Methodology</h4>
-                <p>Data Preprocessing Pipeline</p>
+                <p>Data Preprocessing:</p>
                 <ul>
-                    <li>Processed and cleaned 32,258 automotive claims records containing 23 raw features.</li>
-                    <li><strong>Implemented feature scaling based on data characteristics:</strong> applied RobustScaler for numerical features due to non-normal distribution and the presence of outliers, and used One-Hot Encoding for categorical features.</li>
-                    <li>Handled class imbalance in the target variable (Y = claim class (0,1) = (25,976, 6,281)) by applying SMOTE oversampling to balance the dataset.</li>
+                    <li><strong>Missing Values:</strong> Single NaN row removed.</li>
+                    <li><strong>Categorical Encoding:</strong> Frequency Encoding for high-cardinality <strong>Model</strong> variable to avoid dimensional explosion.</li>
+                    <li><strong>Scaling:</strong> Robust Scaler applied to numerical features to mitigate outlier impact.</li>
                 </ul>
-                <p>Feature Space Optimization</p>
+                <p>Feature Selection:</p>
                 <ul>
-                    <li>Conducted multi-criteria feature selection, using f_regression, Random Forest importance threshold (top 40%), and Pearson correlation.</li>
-                    <li>Evaluated selected feature combinations through grid search, 5-fold cross-validation on 80% training split and final accuracy on 20% teast set.</li>
-                    <li><strong>Final selection:</strong> 9 optimal features maximizing validation accuracy.</li>
+                    <li>Statistical significance testing (p-value < 0.05) reduced features from 99 to 13.</li>
+                    <li>Correlation analysis and Random Forest importance used for validation.</li>
                 </ul>
+                <p>Model Development:</p>
+                <ul>
+                    <li><strong>Algorithm:</strong> XGBClassifier().</li>
+                    <li><strong>Class Imbalance:</strong> SMOTE applied to balance the dataset.</li>
+                    <li><strong>Validation:</strong> 80-20 train-test split with K-fold cross-validation (5 folds).</li>
+                </ul>
+                <p>Model Evaluation:</p>
+                <ul>
+                    <li><strong>Baseline Classifiers: </strong>Nine classifiers were evaluated:<br>Adaptive Boosting Classifier, <br>Gradient Boosting Classifier, <br>Extreme Gradient Boosting (XGBoost) Classifier, <br>Logistic Regression Classifier, <br>Random Forest Classifier, <br>Extremely Randomized Trees (Extra Trees) Classifier, <br>K-Nearest Neighbors (KNN) Classifier, <br>Support Vector Classification (SVM Classifier), <br>Ridge Regression Classifier.</li>
+                    <li><strong>Bagging Extension:</strong> Each classifier was wrapped in a <strong>BaggingClassifier</strong> to create 18 total models (9 base + 9 bagged versions).</li>
+                    <li><strong>Performance Comparison:</strong> Highest Accuracy: XGBClassifier, followed by RandomForestClassifier. Bagged versions of XGBClassifier underperformed (accuracy drop), likely due to increased variance.</li>
+                    <li><strong>XGBoost Classifier </strong> was selected for its superior performance.</li>
+                    <li><strong>K-fold Metrics:</strong> Accuracy and Standard Deviation For All Folds:</li>
+                    <li><strong>0.9617 ± 0.0037 </strong> Average accuracy ± Standard Deviation</li>
+                    <li><strong>0.9450 ± 0.0223 </strong> Average precision ± Standard Deviation</li>
+                    <li><strong>0.8535 ± 0.0060 </strong> Average recall ± Standard Deviation</li>
+                    <li><strong>0.8968 ± 0.0099 </strong> Average F1 ± Standard Deviation</li>
+                </ul>
+
+                <h4>Challenges and Solutions</h4>
+                <p>Project Challenges</p>
+                <ul>
+                    <li><strong>Imbalanced Data:</strong> Low positive class (claim approvals) led to biased model performance and low recall.</li>
+                    <li><strong>High Cardinality:</strong> The Model feature with 200+ categories risked overfitting and computational inefficiency.</li>
+                    <li><strong>Outliers and Non-Normal Distributions:</strong> Skewed numerical variables (e.g., Repair Cost) distorted model coefficients.</li>
+                    <li><strong>Multicollinearity:</strong> Strong correlations between features (e.g., Maker_Ford and repair_complexity) complicated interpretation.</li>
+                    <li><strong>Production Scalability:</strong> Ensuring consistent preprocessing (e.g., frequency encoding) for unseen data.</li>
+                </ul>
+                <p>Solutions</p>
+                <ul>
+                    <li><strong>Class Imbalance:</strong> Applied SMOTE to synthetically oversample the minority class, improving recall and F1-score.</li>
+                    <li><strong>High Cardinality:</strong> Used Frequency Encoding for Model, replacing categories with their occurrence rates.</li>
+                    <li><strong>Outlier Handling:</strong> Implemented Robust Scaler to normalize numerical features using median/IQR, reducing outlier sensitivity.</li>
+                    <li><strong>Feature Selection:</strong> Combined p-value filtering, correlation analysis, and domain knowledge to retain 9 critical features (e.g., repair_cost, Maker_Ford, category_anomaly).</li>
+                </ul>    
+                <p>Production(code) Readiness:</p>
+                <ul>
+                    <li>Saved preprocessing parameters (Robust Scaler, frequency maps) and model as binary files (.pkl) for consistency.</li>
+                    <li>Deployed input validation and batch prediction functions to handle real-world data variability.</li>
+                    <li>Stored cross-validation metrics (accuracy, recall) in JSON for transparent performance tracking.</li>
+
+                </ul>  
 
                 <h4>Technical Highlights</h4>
                 <div class="row-fluid">
                     <div class="span6">
                         <h5>Key Techniques</h5>
                         <ul>
-                            <li>Forward Feature Selection(f_regression)</li>
+
                             <li>Random Forest Classifier feature importances</li>
                             <li>XGBoost Classifier model</li>
+                            <li>Bagging Classifier</li>
                             <li>Robust Scaling</li>
                             <li>Synthetic Minority Oversampling Technique(SMOTE)</li>
                             <li>KFold cross-validation</li>
@@ -320,15 +489,12 @@
 
 <h4>Correlation Between the Independent Variables and Y(Claim)</h4>
 
-<div class="figure-container">
-    <img src="static/fig4_corr.png" alt="Figure 8: Correlation between Y and predictors"style="width: 90%;">
-    <p><strong>Figure 4.</strong> Correlation between all variables</p>
-</div>
+
 
 <!-- Figure 9 -->
 <div class="figure-container">
     <img src="static/fig5_corr.png" alt="Figure 9: Correlation between all variables"style="width: 30%;">
-    <p><strong>Figure 5.</strong> Correlation between Y and predictors</p>
+    <p><strong>Figure 4.</strong> Correlation between Y and predictors</p>
 </div>
 
 <!-- Explanation -->
