@@ -151,7 +151,7 @@ pre {
     /* 讓圖片填滿區域但不變形 */
     object-fit: cover;
     /* 調整圖片往下移 */
-    object-position: center 10%; /* 20% 可自行調整 */
+    object-position: center 25%; /* 20% 可自行調整 */
 }
 
 .profile-photo:hover {
