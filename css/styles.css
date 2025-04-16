@@ -229,9 +229,7 @@ pre {
     transition: 0.3s;
   }
   
-  summary.page-title::-webkit-details-marker {
-    display: none; /* Chrome 隱藏預設箭頭 */
-  }
+
   
   /* 自定義箭頭樣式 */
   summary.page-title::before {
