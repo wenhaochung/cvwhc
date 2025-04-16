@@ -208,3 +208,40 @@ pre {
         margin-bottom: 20px;
     }
 }
+
+
+/* 開 摺 自定義 details 樣式 */
+
+  
+  summary.page-title {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    list-style: none; /* 隱藏預設箭頭 */
+    position: relative;
+    transition: 0.3s;
+  }
+  
+  summary.page-title::-webkit-details-marker {
+    display: none; /* Chrome 隱藏預設箭頭 */
+  }
+  
+  /* 自定義箭頭樣式 */
+  summary.page-title::before {
+    content: '▶';
+    position: absolute;
+    right: 20px;
+    color: #666;
+    transition: transform 0.2s;
+  }
+  
+  details[open] summary.page-title::before {
+    transform: rotate(90deg);
+  }
+  
+  /* 內容區域樣式 */
+  .details-content {
+    padding: 0 20px 20px;
+    border-top: 1px solid #eee;
+  }
