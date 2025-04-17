@@ -2,13 +2,12 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Wen-Hao Chung - Portfolio</title>
-    
+    <title>Wen-Hao Chung - Home</title>
     <!--[if lt IE 9]>
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
@@ -17,749 +16,85 @@
     <meta name="viewport" content="width=device-width">
 </head>
 <body data-spy="scroll">
+    <!-- Navigation -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- 手機選單按鈕 -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
 
-<!-- Navigation -->
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="#home">Ivan's Portfolio</a>
-            <div class="nav-collapse collapse">
-                <ul class="nav pull-right">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Project I</a></li>
-                    <li><a href="#portfolio2">Project II</a></li>
-                    <li><a href="#portfolio3">Project III</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+                <!-- 網站品牌 -->
+                <a class="brand" href="index.html">Ivan's Portfolio</a>
 
-<!-- Main Content -->
-<div class="container content" id="home">
-    <!-- Home Section -->
-    <div class="row-fluid">
-        <div class="span7">
-            <div id="app-name">
-                <h1>Ivan Chung</h1>
-            </div>
-            <div id="tagline" style="text-align: justify;">
-                Data Analytics  |  
-                Python  |  SQL  |  Power BI  |  HTML, CSS
-            </div>
-
-            <div id="description"style="text-align: justify;">
-                <p>I am a detail-oriented Data Analyst with a strong background in statistics and hands-on experience analyzing <strong>two million healthcare records</strong>. As a multifaceted professional, I believe in continuous learning and growth with emerging technologies.</p>
-                <p>My passion for mathematics started early. I was so enthusiastic about the subject during my student years that I created four <strong>self-written</strong> master's textbooks on <strong>Probability, Statistics, Calculus</strong>, and <strong>Linear Algebra</strong> to aid my own learning. Little did I know that this deep foundation would later become invaluable in my journey into <strong>machine learning</strong> and advanced data analytics.</p>
-                <p>Building on this quantitative background, I have developed expertise in <strong>vendor management</strong>, along with <strong>project management</strong> and <strong>budget planning</strong> oversight, enabling me to contribute to both <strong>operational</strong> and <strong>strategic</strong> initiatives in this rapidly evolving AI-driven era.</p>
-                <p><br></p>
-                <p><br></p>
-            </div>
-        </div>
-            <!-- 新增头像区块 -->
-    <div class="span5 profile-photo-container">
-        <img src="static/profile.jpg" alt="Wen Hao Chung" class="profile-photo">
-    </div>
-    </div>
-
-    <!-- Resume Section -->
-    <details class="row-fluid" id="resume" >
-        <summary class="page-title">Resume</summary>
-        <div class="details-content">
-            <div class="span12" style="text-align: justify;">
-    
-    
-        
-            
-        
-        
-        <div class="span12">
-            
-            <h3>Education</h3>
-            <p></p>
-            <h4>British Columbia Institute of Technology</h4>
-            <p>Vancouver, Canada</p>
-            <ul>
-                <li>Certificate in Applied Data Analytics</li>
-                <li>Letter of Recommendation: <a href="static/Ivan_reference.pdf" target="_blank">Click Here</a></li>
-            </ul>
-
-            <h4>National Chengchi University</h4>
-            <p>Taipei, Taiwan</p>
-            <ul>
-                <li>MSc in Statistics</li>
-                <li><strong>Thesis</strong>: Aging population impact analysis using 2M+ healthcare records</li>
-            </ul>
-
-            <h3>Professional Experience</h3>
-            <p></p>
-
-
-            <h4>BNP Paribas Assurance</h4>
-            <p>Outsourcing Management Specialist</p>
-            <ul>
-                <li>Coordinated between IT and key business functions, and managed third-party vendors, overseeing application implementation, and annually adapted agreements to comply with new insurance regulations.</li>
-                <li>Collaborated with the key stakeholders, product owners, external vendors to define solutions for end-to-end business problems, such as data integration between different applications via APIs.</li>
-                <li>Led contract renewals and designed invoice methodologies, including optimizing billing systems and enhancing overall operational efficiency through Agile collaboration on business processes.</li>
-            </ul>
-            <p>Project Portfolio Management and Budget Planning</p>
-            <ul>
-                <li>Collaborated with Finance on budget planning for over 50 projects annually, managing a total budget of approximately 3 million CAD across key areas including IFRS, Data Foundation, and e-Policy.</li>
-                <li>Facilitated BNP Taiwan’s budget approval process with headquarters by providing analyses of closing financial reports and established a robust budget control system and internal monitoring process for financial management.</li>
-                <li>Conducted monthly reviews of project milestones and costs with stakeholders, ensuring the accuracy and reasonableness of project budgets and resource allocations at each phase.</li>
-            </ul>
-            <h4>Cathay Life Insurance</h4>
-            <p>Data Analyst</p>
-            <ul>
-                <li>Analyzed two million records from the Health Insurance Research Database (HIRD) to assess disease prevalence and medical utilization rates across diverse age groups and regions.</li>
-                <li>Conducted a comparative analysis between HIRD data and official government statistics, demonstrating high representativeness.</li>
-                <li>Identified and addressed data limitations, such as the absence of death certificates, by establishing innovative criteria for death determination that closely aligned with official records.</li>
-                <li>Transformed HIRD data into actionable insights, enabling stakeholders to make data-driven decisions and tailor business strategies to meet the unique needs of different customer cohorts.</li>
-            </ul>
-            <p><br></p>
-            <p><br></p>
-        </div>
-        
-    </div>
-    </details>
-
-
-<!-- Portfolio Section -->
-    <details class="row-fluid" id="portfolio">
-        <summary class="page-title">Project I - Time Series</summary>
-        <div class="details-content">
-        <div class="span12" style="text-align: justify;">
-    
-    
-        
-        <div class="span12">
-            <h3>Russell 2000 Index (Time-Series Prediction)</h3>
-            <div class="project-details">
-
-                <h4>Objective</h4>
-                <p> The primary objective of this project is to develop a robust predictive framework for forecasting the <strong> Russell 2000 Index Close Price </strong> two days ahead (t+2). By leveraging historical data from multiple U.S. and international market indices, technical indicators, and macroeconomic variables, the model aims to provide actionable insights for investors while avoiding reliance on incomplete intraday data.</p>
-                <p><strong>Key Benefits:</strong> </p>
-                <ul>
-                    <li><strong> Practicality: </strong>  Predictions for t+2 allow full utilization of finalized daily data (e.g., closing prices, volume) without requiring real-time updates.</li>
-                    <li><strong> Risk Mitigation: </strong>  Integration of volume-based trend confirmation reduces false signals in trading strategies (e.g., Golden/Death Cross).</li>
-                    <li><strong> Scalability: </strong>  The framework can be extended to other indices or asset classes, e.g. DJI, NASDAQ, NYSE, S&P close.</li>
-                    <li><strong> Market Insight: </strong>  Analysis of small-to-mid-cap companies via the Russell 2000 offers a proxy for broader economic health.</li>
-                    <li><strong> Additional Insight: </strong>  The exclusion of Russell-specific features to prevent data leakage ensures generalizability and compliance with real-world deployment constraints.</li>
-                </ul>                
-                
-                <h4>Dataset Overview</h4>
-                <p>Data Source: <a href="https://archive.ics.uci.edu/dataset/554/cnnpred+cnn+based+stock+market+prediction+using+a+diverse+set+of+variables"target="_blank">CNNpred Dataset</a></p>
-                <p> &nbsp;&nbsp; The dataset comprises <strong>five CSV files (DJI, NASDAQ, NYSE, RUSSELL, S&P 500) </strong> from 2010–2017, each containing 1,984 rows × 84 columns.</p>
-                <p><strong>Key features include:</strong> </p>
-                <ul>
-                    <li><strong>Basic Market Data: </strong> Date, Close, Volume (Rate of Change).</li>
-                    <li><strong>Technical Indicators: </strong> Momentum (mom, mom1–3), ROC, EMA.</li>
-                    <li><strong>Macroeconomic Variables: </strong> Treasury rates, bond spreads, commodity prices (Oil, Gold), FX rates.</li>
-                    <li><strong>Company Stock Prices: </strong> AAPL, AMZN, MSFT, etc.</li>
-                    <li><strong>International Indices & Futures: </strong> CAC 40, DAX, Nikkei.</li>
-                </ul> 
-                <p><strong>Key Variations:</strong> </p>
-                <ul>
-                    <li><strong>Index-Specific Futures</strong> (e.g., CAC-F in DJI, KOSPI-F in NASDAQ).</li>
-                    <li><strong>Consistency: </strong> Commodity and currency data (e.g., Brent, copper-F) are standardized across files.</li>
-                </ul> 
-                <p><strong>Data Limitations:</strong> </p>
-                <ul>
-                    <li><strong>Temporal Constraints: </strong> Data ends in 2017; newer market regimes (e.g., post-COVID) are unaddressed.</li>
-                </ul> 
-
-                <h4>Methodology</h4>
-                <p><strong>Trend Analysis & Trading Strategy</strong></p>
-                <ul>
-                    <li><strong>Golden/Death Cross: </strong> 23-day EMA (short-term) and 69-day EMA (long-term) crossovers generate buy/sell signals.</li>
-                    <li><strong>Volume Validation: </strong> High trading volume (ROC) confirms trend legitimacy, reducing false breakouts.</li>
-                </ul> 
-                <p><strong>Time-Series Forecasting (HWES)</strong> </p>
-                <ul>
-                    <li><strong>Holt-Winters Exponential Smoothing: </strong> Model assumes multiplicative trend/seasonality (300-day period). Achieved RMSE = 41.16 but lacks adaptability to sudden market shifts.</li>
-                </ul> 
-                <p><strong>Machine Learning for t+2 Prediction</strong> </p>
-                <ul>
-                    <li><strong>Feature Selection: </strong>
-                        	P-value Filtering (p < 0.05).
-                        &	Correlation (>80% with target).
-                        &	F-regression (top 25 ANOVA F-value features).
-                        &	Random Forest Importance (tree-based rankings).</li>
-                        
-                    <li><strong>Final Feature Set: </strong> Hybrid selection combining technical indicators (e.g., NASDAQ_Close, S&P_EMA_50), macroeconomic variables (DGS10, DTB4WK), and volume metrics.</li>
-                    <li><strong>Model Selection: </strong>
-                        	<strong>ElasticNet with PCA: </strong> Outperformed stacked models.
-                        and	<strong>TimeSeriesSplit: </strong> Ensured temporal integrity during cross-validation (avg. RMSE = 47.48).</li>
-                        
-                    <li><strong>Critical Additions: </strong>Avoiding Data Leakage: Excluded Russell-specific features and enforced time-series splits.</li>
-                </ul> 
-
-                <h4>Challenges and Solutions</h4>
-                <p><strong>Project Challenges:</strong></p>
-                <ul>
-                    <li>Predicting stock prices is inherently complex due to the multitude of influencing factors. This project focuses on forecasting the <strong> Russell 2000 Index Close Price </strong>using data from five major U.S. indices (DJI, NASDAQ, NYSE, S&P 500, RUSSELL). A critical challenge arises from the impracticality of predicting the next day’s close using today’s data, as incomplete or delayed intraday metrics (e.g., finalized closing prices, volume) may not be available before the next trading session.</li>
-                    <li>Additionally, financial time series like RUSSELL_Close are highly <strong> non-stationary </strong>, exhibiting <strong> volatility clustering </strong>and unpredictable shifts driven by external events (e.g., policy changes, geopolitical tensions). The reliance on historical patterns also introduces risks: while models like <strong> Holt-Winters Exponential Smoothing (HWES)</strong> assume recurring <strong> trends and seasonality </strong>, real-world markets often deviate from such assumptions, especially during black swan events.</li>
-                    <li>Furthermore, the dataset’s high dimensionality (84 features across five indices) amplifies noise and <strong> multicollinearity </strong>, complicating feature selection.</li>
-                </ul>
-                <p><strong>Solutions:</strong></p>
-                <p> &nbsp;&nbsp;&nbsp;&nbsp;To address these challenges, a <strong> dual-method </strong>approach was implemented:</p>
-                <p> <strong>1.	Holt-Winters Exponential Smoothing (HWES):</strong></p>
-                <ul>
-                    <li>This time-series model was trained on six years of RUSSELL_Close data, assuming a <strong> multiplicative trend </strong> (trend=’mul’) and <strong> multiplicative seasonality </strong> (seasonal=’mul’) with a 300-day seasonal period. The model captured <strong> cyclical patterns </strong> (e.g., annual trends) and achieved an <strong> RMSE of 41.16</strong>. However, its rigidity in assuming fixed seasonality limits adaptability to sudden market disruptions.</li>
-                </ul>               
-                <p> <strong>2.	Machine Learning Regressors for t+2 Prediction:</strong></p>
-                <ul>
-                    <li>To bypass reliance on incomplete daily data, the target was shifted to RUSSELL_Close_t+2, allowing the use of finalized prior-day metrics. To prevent <strong> data leakage </strong>, all Russell-specific features were excluded, and predictors were restricted to DJI, NASDAQ, NYSE, and S&P 500 data. A hybrid feature selection strategy combined statistical significance (p-value < 0.05), correlation (>80%), and tree-based importance rankings. The final model, ElasticNet with PCA, reduced RMSE to 46.32 by addressing multicollinearity and overfitting.</li>
-                    <li><strong> Robust Validation</strong>: <strong> Time-series splits</strong>  replaced random K-fold to avoid future data leakage.</li>
-                </ul>   
-                <p> &nbsp;&nbsp;This <strong> dual methodology</strong>  balances theoretical assumptions (<strong> HWES seasonality</strong>) with empirical adaptability (<strong> machine learning</strong>), offering a pragmatic framework for financial forecasting.</p>
-
-                <h4>Technical Highlights</h4>
-                <div class="row-fluid">
-                    <div class="span6">
-                        <h5>Key Techniques</h5>
-                        <ul>
-                            <li>Exponential Moving Average(EMA) Crossovers</li>
-                            <li>Holt-Winters Exponential Smoothing (HWES)</li>
-                            <li>ElasticNet Regression</li>
-                            <li>Stacked Model</li>
-                            <li>Principal Component Analysis (PCA)</li>
-                            
-                        </ul>
-                    </div>
-                    <div class="span6">
-                        <h5>Model Performance</h5>
-                        <ul>
-                            <li>Root Mean Squared Error (RMSE): 46.322</li>
-                            <li>R² : 0.832</li>
-                           
-                        </ul>
-                    </div>
+                <!-- 導航列內容 -->
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="page/resume.html">Resume</a></li>
+                        <li><a href="page/project1.html">Project I</a></li>
+                        <li><a href="page/project2.html">Project II</a></li>
+                        <li><a href="page/project3.html">Project III</a></li>
+                    </ul>
                 </div>
-
-                
-                <h4>Trading Strategy based on Golden Cross and Volume(RoC)</h4>
-
-<!-- Figure 8 -->
-
-<div class="figure-container">
-    <img src="static/EMAtrading.png" alt="Figure 9: Correlation between all variables">
-    <p><strong>Figure 1.</strong> RUSSELL 2000 Trading Strategy</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p>The strategy is based on the Moving Average Crossover:</p>
-        <ul>
-            <li><p><strong>Buy Signal (Golden Cross): </strong>When the short-term EMA (ema23) <strong>crosses above</strong> the long-term EMA (ema69), it indicates strengthening upward momentum. Traders interpret this as a bullish trend starting.</p>
-            <li><p><strong>Sell Signal (Death Cross): </strong>When the short-term EMA <strong>crosses below</strong> the long-term EMA, it signals weakening momentum and a potential bearish trend.</p>
-            <li><p>Volume acts as a "<strong>truth-teller</strong>" for price movements, reducing false signals, because it reflects <strong>market participation</strong>, and validates price movements. Therefore, considering RUSSELL_Volume(RoC) <strong>improves accuracy</strong>.</p>
-        </ul>
-</div>
-
-<h4>(method 1)By using Holt-Winters Exponential Smoothing (HWES) model to forecast the future values of the RUSSELL_Close index</h4>
-
-<div class="figure-container">
-    <img src="static/HoltWinter.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 2.</strong> HWES Model</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p>This time-series model was trained on six years of RUSSELL_Close data, assuming a <strong> multiplicative trend </strong> (trend=’mul’) and <strong> multiplicative seasonality </strong> (seasonal=’mul’) with a 300-day seasonal period. The model captured <strong> cyclical patterns </strong> (e.g., annual trends) and achieved an <strong> RMSE of 41.16</strong>. However, its rigidity in assuming fixed seasonality limits adaptability to sudden market disruptions.</p>
-</div>
-
-<h4>(method 2)ElasticNet Regressor for t+2 Prediction: Plotting the Predictions vs. Actual RUSSELL_Close values on a 45-degree line</h4>
-
-<div class="figure-container">
-    <img src="static/predActual.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 3.</strong> 2017 RUSSELL 2000 - Close Price</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    
-    <ul>
-        <li><p>Next, We predict RUSSELL_Close value by using ElasticNet Regressor (the target was shifted to RUSSELL_Close_t+2), and we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2.</p>
-        <li><p>After utilizing <strong>80%</strong> of the data (i.e. <strong>2010 to 2016</strong>) to train the model, we proceeded to validate its performance by making predictions on the subsequent <strong>20%</strong> of the data (i.e. <strong>2017</strong>). To assess the accuracy of these predictions, we plotted the <strong>predicted vs. actual</strong> values of RUSSELL_Close_t+2, comparing them against the <strong>45-degree dashed reference line</strong>, which represents an ideal scenario where predictions perfectly match the actual values. Upon examining the plot, we observed that the predicted values <strong>closely align with</strong> this reference line, indicating that the model effectively captures the underlying trend in the data and demonstrates strong predictive performance.</p>
-    </ul>
-    <p>How to Interpret a Prediction vs. Actual Plot on a <strong>45-Degree Line</strong>?</p>
-    <ul>
-        <li><p>The <strong>X-axis</strong> represents the <strong>actual values</strong> (true outcomes).</p>
-        <li><p>The <strong>Y-axis</strong> represents the <strong>predicted values</strong> (model's output).</p>
-        <li><p>A <strong>dotted 45-degree diagonal line</strong> represents <strong>perfect predictions</strong>, meaning that if all points lie exactly on this line, the model's predictions are <strong>100% accurate</strong>.</p>
-        <li><p><strong>Overestimation</strong>: Most points are <strong>above</strong> the line → Model <strong>predicts too high</strong>.</p>
-        <li><p><strong>Underestimation</strong>: Most points are <strong>below</strong> the line → Model <strong>predicts too low</strong>.</p>
-        <li><p><strong>Weak Model Performance</strong>: The points are <strong>widely scattered</strong>, far from the 45-degree line.</p>
-    </ul>
-
-</div>
-
-<div class="figure-container">
-    <img src="static/variables.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 4.</strong> Final Feature Set</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p>How to select <strong>features</strong>?</p>
-    <ul>
-        <li><p>To ensure an optimal feature set for the predictive model, multiple feature selection techniques were employed. These methods included <strong>P-value Filtering</strong>, where features with a p-value less than 0.05 were retained; <strong>Correlation Analysis</strong>, selecting variables with an absolute correlation greater than 80% with the target; <strong>F-regression</strong>, which prioritized the top 25 features based on ANOVA F-values; and <strong>Random Forest Importance</strong>, a tree-based ranking approach to identify the most influential predictors. </p>
-        <li><p>The features that <strong>appeared consistently across these methods</strong> were selected as the initial set. To further refine the model, different feature group combinations were tested, evaluating their performance based on the <strong>lowest</strong> Root Mean Square Error (<strong>RMSE</strong>).</p>
-        <li><p>The final feature set was a hybrid selection incorporating key technical indicators (e.g., NASDAQ_Close, S&P_EMA_50), macroeconomic variables (e.g., DGS10, DTB4WK), and volume metrics, ensuring a balanced mix of market trends, economic conditions, and liquidity measures. A complete list of selected variables is presented in <strong>Figure 4</strong>.</p>
-    </ul>
-</div>
-
-<div class="figure-container">
-    <img src="static/stacked.png" alt="Figure 8: Correlation between Y and predictors"style="width: 30%;">
-    <p><strong>Figure 5.</strong> Stacked Model RMSE versus Base models</p>
-    <img src="static/model.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 6.</strong> Model Evaluation</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p><strong>Model Evaluation</strong></p>
-    <ul>
-        
-        <li><p>After determining the significant features, the next step is to decide which model provides the best predictive performance. We first evaluated the performance of six different models: ElasticNet, SVR, DecisionTreeRegressor, AdaBoostRegressor, RandomForestRegressor, and ExtraTreesRegressor. Then, we use a Stacked Model to combine these six models and compare their RMSE. We find that ElasticNet has a lower RMSE than the Stacked Model, so we chose ElasticNet, as shown in <strong>Figure 5</strong>. </p>
-        <li><p>Next, we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2, as shown in <strong>Figure 6</strong>.</p>
-    </ul>
-</div>
             </div>
         </div>
     </div>
-    
-</div>
-<div class="container content" id="home">
-</details>
-    <!-- Portfolio Section -->
-    <details class="row-fluid" id="portfolio2">
-        <summary class="page-title">Project II - Machine Learning Classifier</summary>
-        <div class="details-content">
-          <div class="span12" style="text-align: justify;">
-        
-        <div class="span12">
-            <h3>Insurance Claim Prediction Model</h3>
-            <div class="project-details">
 
-                <h4>Objective</h4>
-                <p> The primary objective of this project is to develop a <strong> XGBoost Classifier </strong>model to predict insurance claim approvals based on vehicle and repair-related factors. The model aims to automate the claim assessment process, reducing manual review efforts and operational costs.</p>
-                <p><strong>Key Benefits:</strong> </p>
-                <ul>
-                    <li><strong> Operational Efficiency: </strong>  Minimize time and labor spent on manual claim evaluations.</li>
-                    <li><strong> Fraud Mitigation: </strong>  Identify patterns indicative of fraudulent claims through data-driven insights.</li>
-                    <li><strong> Scalability: </strong>  Enable rapid processing of large claim volumes without compromising accuracy.</li>
-                    <li><strong> Consistency: </strong>  Ensure standardized decision-making across all claims, reducing human bias.</li>
+    <!-- Home Content -->
+    <div class="container content">
+        <div class="row-fluid">
+            <div class="span7">
+                <div id="app-name">
+                    <h1><br>Ivan Chung</h1>
+                </div>
+                <div id="tagline" style="text-align: justify;">
+                    Data Analytics  |  
+                    Python  |  SQL  |  Power BI  |  HTML, CSS
+                </div>
+                <div id="description"style="text-align: justify;">
+                    <p>I am a detail-oriented Data Analyst with a strong background in statistics and hands-on experience analyzing <strong>two million healthcare records</strong>. As a multifaceted professional, I believe in continuous learning and growth with emerging technologies.</p>
+                    <p>My passion for mathematics started early. I was so enthusiastic about the subject during my student years that I created four <strong>self-written</strong> master's textbooks on <strong>Probability, Statistics, Calculus</strong>, and <strong>Linear Algebra</strong> to aid my own learning. Little did I know that this deep foundation would later become invaluable in my journey into <strong>machine learning</strong> and advanced data analytics.</p>
+                    <p>Building on this quantitative background, I have developed expertise in <strong>vendor management</strong>, along with <strong>project management</strong> and <strong>budget planning</strong> oversight, enabling me to contribute to both <strong>operational</strong> and <strong>strategic</strong> initiatives in this rapidly evolving AI-driven era.</p>
                     
-                </ul> 
-
-                <h4>Dataset Overview</h4>
-                <p><strong>Total Records:</strong>32,258 claims.</p>
-
-                
-                <p><strong>Features:</strong>23 variables, including:</p>
-                <ul>
-                    <li><strong>Vehicle Details: </strong> Maker, Model, Color, Engine Size, Fuel Type, Registration Year.</li>
-                    <li><strong>Accident/Repair Data:</strong> Breakdown Date, Repair Cost, Repair Hours, Repair Complexity.</li>
-                    <li><strong>Other Variables:</strong> Price, Seat/Door Count, Issue Type, Category Anomaly Flag.</li>
-                </ul>
-                <p><strong>Target Variable: Claim </strong> (binary: 1 = Approved, 0 = Denied).</p>
-
-                <p><strong>Key Observations:</strong></p>
-                <ul>
-                    <li>Minimal missing data (only 1 row with NaN values).</li>
-                    <li>High cardinality in the<strong>Model</strong> feature (200+ unique categories).</li>
-                    <li>Imbalanced target distribution (25,976 denied vs. 6,281 approved claims).</li>
-       
-                </ul>
-
-                <h4>Methodology</h4>
-                <p>Data Preprocessing:</p>
-                <ul>
-                    <li><strong>Missing Values:</strong> Single NaN row removed.</li>
-                    <li><strong>Categorical Encoding:</strong> Frequency Encoding for high-cardinality <strong>Model</strong> variable to avoid dimensional explosion.</li>
-                    <li><strong>Scaling:</strong> Robust Scaler applied to numerical features to mitigate outlier impact.</li>
-                </ul>
-                <p>Feature Selection:</p>
-                <ul>
-                    <li>Statistical significance testing (p-value < 0.05) reduced features from 99 to 13.</li>
-                    <li>Correlation analysis and Random Forest importance used for validation.</li>
-                </ul>
-                <p>Model Development:</p>
-                <ul>
-                    <li><strong>Algorithm:</strong> XGBClassifier().</li>
-                    <li><strong>Class Imbalance:</strong> SMOTE applied to balance the dataset.</li>
-                    <li><strong>Validation:</strong> 80-20 train-test split with K-fold cross-validation (5 folds).</li>
-                </ul>
-                <p>Model Evaluation:</p>
-                <ul>
-                    <li><strong>Baseline Classifiers: </strong>Nine classifiers were evaluated:<br>Adaptive Boosting Classifier, <br>Gradient Boosting Classifier, <br>Extreme Gradient Boosting (XGBoost) Classifier, <br>Logistic Regression Classifier, <br>Random Forest Classifier, <br>Extremely Randomized Trees (Extra Trees) Classifier, <br>K-Nearest Neighbors (KNN) Classifier, <br>Support Vector Classification (SVM Classifier), <br>Ridge Regression Classifier.</li>
-                    <li><strong>Bagging Extension:</strong> Each classifier was wrapped in a <strong>BaggingClassifier</strong> to create 18 total models (9 base + 9 bagged versions).</li>
-                    <li><strong>Performance Comparison:</strong> Highest Accuracy: XGBClassifier, followed by RandomForestClassifier. Bagged versions of XGBClassifier underperformed (accuracy drop), likely due to increased variance.</li>
-                    <li><strong>XGBoost Classifier </strong> was selected for its superior performance.</li>
-                    <li><strong>K-fold Metrics:</strong> Accuracy and Standard Deviation For All Folds:</li>
-                    <li><strong>0.9617 ± 0.0037 </strong> Average accuracy ± Standard Deviation</li>
-                    <li><strong>0.9450 ± 0.0223 </strong> Average precision ± Standard Deviation</li>
-                    <li><strong>0.8535 ± 0.0060 </strong> Average recall ± Standard Deviation</li>
-                    <li><strong>0.8968 ± 0.0099 </strong> Average F1 ± Standard Deviation</li>
-                </ul>
-
-                <h4>Challenges and Solutions</h4>
-                <p>Project Challenges</p>
-                <ul>
-                    <li><strong>Imbalanced Data:</strong> Low positive class (claim approvals) led to biased model performance and low recall.</li>
-                    <li><strong>High Cardinality:</strong> The Model feature with 200+ categories risked overfitting and computational inefficiency.</li>
-                    <li><strong>Outliers and Non-Normal Distributions:</strong> Skewed numerical variables (e.g., Repair Cost) distorted model coefficients.</li>
-                    <li><strong>Multicollinearity:</strong> Strong correlations between features (e.g., Maker_Ford and repair_complexity) complicated interpretation.</li>
-                    <li><strong>Production Scalability:</strong> Ensuring consistent preprocessing (e.g., frequency encoding) for unseen data.</li>
-                </ul>
-                <p>Solutions</p>
-                <ul>
-                    <li><strong>Class Imbalance:</strong> Applied SMOTE to synthetically oversample the minority class, improving recall and F1-score.</li>
-                    <li><strong>High Cardinality:</strong> Used Frequency Encoding for Model, replacing categories with their occurrence rates.</li>
-                    <li><strong>Outlier Handling:</strong> Implemented Robust Scaler to normalize numerical features using median/IQR, reducing outlier sensitivity.</li>
-                    <li><strong>Feature Selection:</strong> Combined p-value filtering, correlation analysis, and domain knowledge to retain 9 critical features (e.g., repair_cost, Maker_Ford, category_anomaly).</li>
-                </ul>    
-                <p>Production(code) Readiness:</p>
-                <ul>
-                    <li>Saved preprocessing parameters (Robust Scaler, frequency maps) and model as binary files (.pkl) for consistency.</li>
-                    <li>Deployed input validation and batch prediction functions to handle real-world data variability.</li>
-                    <li>Stored cross-validation metrics (accuracy, recall) in JSON for transparent performance tracking.</li>
-
-                </ul>  
-
-                <h4>Technical Highlights</h4>
-                <div class="row-fluid">
-                    <div class="span6">
-                        <h5>Key Techniques</h5>
-                        <ul>
-
-                            <li>Random Forest Classifier feature importances</li>
-                            <li>XGBoost Classifier model</li>
-                            <li>Bagging Classifier</li>
-                            <li>Robust Scaling</li>
-                            <li>Synthetic Minority Oversampling Technique(SMOTE)</li>
-                            <li>KFold cross-validation</li>
-                        </ul>
-                    </div>
-                    <div class="span6">
-                        <h5>Model Performance</h5>
-                        <ul>
-                            <li>Accuracy: 96.2%</li>
-                            <li>Recall: 85.4%</li>
-                            <li>Precision: 94.5%</li>
-                            <li>F1 Score: 89.7%</li>
-                        </ul>
-                    </div>
                 </div>
-
-                <h4>Demo</h4>
-                <pre>
-                    <h1>Claim Prediction Demo</h1>
-                    <div class="input-container">
-                        <label>Case Anomaly (0 or 1): <input type="number" id="category_anomaly"></label>
-                        <label>Brand (Ford/Dacia): <input type="text" id="Maker"></label>
-                        <label>Model: <input type="text" id="Model"></label>
-                        <label>Number of Seats (2-20): <input type="number" id="Seat_num"></label>
-                    </div>
-                    <div class="input-container">
-                        <label>Number of Doors (2-7): <input type="number" id="Door_num"></label>
-                        <label>Repair Cost: <input type="number" id="repair_cost"></label>
-                        <label>Repair Time: <input type="number" id="repair_hours"></label>
-                        <label>Repair Complexity (1-4): <input type="number" id="repair_complexity"></label>
-                    </div>
-                    <div class="button-container">
-                        <button id="predictButton">Predict</button>
-                        <p id="result"></p>
-                        <p id="error"></p>
-                    </div>
-                    <script src="static/script.js"></script>
-                </pre>
-                <h4>Numerical Figures</h4>
-
-<!-- Figure 8 -->
-
-<div class="figure-container">
-    <img src="static/fig1_numeric.jpg" alt="Figure 9: Correlation between all variables"style="width: 70%;">
-    <p><strong>Figure 1.</strong> Numerical Figure Distribution</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p>For numeric features, check whether they follow a <strong> normal distribution </strong> and identify any <strong> outliers </strong> to determine the appropriate scaler to use. Since none of the features follow a normal distribution, and most of them contain outliers, using a <strong> Robust Scaler </strong> might be the better option to scale the variables. This helps mitigate the impact of extreme values and <strong> prevents regression coefficient distortion</strong> caused by extreme scale differences.</p>
-</div>
-
-<h4>Categorical Features</h4>
-
-<div class="figure-container">
-    <img src="static/fig2_cates.png" alt="Figure 8: Correlation between Y and predictors"style="width: 65%;">
-    <p><strong>Figure 2.</strong> Top 10 claim cases Brands</p>
-</div>
-
-<!-- Figure 9 -->
-<div class="figure-container">
-    <img src="static/fig3_cates.png" alt="Figure 9: Correlation between all variables"style="width: 65%;">
-    <p><strong>Figure 3.</strong> Top 10 claim approved ratio Brands</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <ul>
-        <li><p>For <strong>categorical variable ‘Maker’</strong>, <strong> Ford </strong> is the highest amount of claim cases maker, and <strong> Ferrari </strong> and <strong> Dacia </strong> are the top two highest claim ratio makers.</p>
-        <li><p>Since the variable ‘Model’ has over 200 unique categories, applying <strong> One-Hot Encoding </strong> would create more than <strong> 200 additional columns </strong>, leading to <strong> dimensional explosion </strong>. This significantly increases computational cost and may result in model overfitting. To address this issue, we use <strong> Frequency Encoding </strong> to transform the Model variable. Moreover, before feeding the data ‘Model’ into the model, RobustScaler will be applied together with other numerical variables, ensuring a more stable and reliable transformation, because the frequency values may vary significantly across different Model categories. Directly using unscaled ‘Model_FreqEncoded’ could negatively impact the model.</p>
-    </ul>
-</div>
-
-<h4>Correlation Between the Independent Variables and Y(Claim)</h4>
-
-
-
-<!-- Figure 9 -->
-<div class="figure-container">
-    <img src="static/fig5_corr.png" alt="Figure 9: Correlation between all variables"style="width: 30%;">
-    <p><strong>Figure 4.</strong> Correlation between Y and predictors</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p>For the correlation between the independent variables and Y, after taking the <strong> absolute values </strong>, they are ranked from top to bottom in descending order of their correlation with Y. The variable <strong> category_anomaly </strong>has the highest correlation with Y. Additionally, <strong> Model_FreqEncoded and Maker_Ford </strong>are highly correlated, and <strong> repair_complexity </strong> also has a strong correlation with <strong> Maker_Ford </strong>. Therefore, category_anomaly, Model_FreqEncoded, Maker_Ford, and repair_complexity will be included in the Model Evaluation to run experiments and determine which combination yields the highest accuracy.</p>
-</div>
-
-
-
-</div>
-</div>
-</div>
-
-
-<!-- Main Content -->
-<div class="container content" id="home">
-</details>
-    <!-- Portfolio 3 Section -->
-    <details class="row-fluid" id="portfolio3">
-        <summary class="page-title">Project III - Principal Component Analysis</summary>
-        <div class="details-content">
-          <div class="span12" style="text-align: justify;">
-        
-        <div class="span12">
-            <h3>SQL-R Integrated Workflow for Dimensionality Reduction and Pattern Discovery in NY Demographic Data</h3>
-            <div class="project-details">
-
-                <h4>Objective</h4>
-                <p> The project aims to perform <strong>dimensionality reduction</strong> using <strong>Principal Component Analysis</strong> (PCA) on a dataset containing demographic and economic attributes. Since high-dimensional data (10 dimensions) cannot be directly visualized, the analysis focuses on 2D projections to identify underlying patterns.</p>
-                <p>The workflow involves <strong>SQL</strong> for data preparation and <strong>R</strong> for statistical analysis and visualization.</p>
-                <ul>
-                    <li>SQL efficiently handles large datasets, ensures data integrity, and performs filtering/aggregation.</li>
-                    <li>R leverages statistical libraries (e.g., eigenvalue computation, pairs()) and visualization tools to uncover patterns that SQL alone cannot reveal.</li>
-
-                    <li>This end-to-end process transforms raw data into actionable insights, demonstrating the synergy between SQL for data engineering and R for advanced analytics.</li>
-                </ul>               
-                
-                <h4>Table Overview</h4>
-                <p><strong>Orders Table:</strong> </p>
-                <p> &nbsp;&nbsp; This table stores customer order information, including order ID, customer and campaign IDs, date, location (city, <strong>state</strong>, ZIP code), payment method, total price, and quantities. It supports sales and geographic trend analysis.</p>
-
-                <p><strong>Census Table:</strong> </p>
-                <p> &nbsp;&nbsp; This table contains rich census data by ZIP code, including details on population, household income, employment, education, and housing. It is useful for demographic and socioeconomic analysis. <strong>Key Categories & Fields:</strong></p>
-                <ul>
-                    <li><strong>Population Demographics: </strong> e.g., Age, Gender, etc.</li>
-                    <li><strong>Race & Ethnicity: </strong> e.g., Asian, Indian, White, etc.</li>
-                    <li><strong>Household & Family Data: </strong> e.g., Household Types, Income Brackets, Household Composition, etc.</li>
-                    <li><strong>Income & Poverty: </strong> e.g., Income Metrics, Poverty Status, etc.</li>
-                    <li><strong>Employment & Workforce: </strong> e.g., Labor Force, Commuting, etc.</li>
-                    <li><strong>Housing: </strong> e.g., Occupancy & Structure, Costs & Utilities, etc.</li>
-                    <li><strong>Education & Language: </strong> e.g., School Enrollment, Educational Attainment, Language, etc.</li>
-                    <li><strong>Health & Insurance: </strong> e.g., Insurance Coverage, Disability Status, etc.</li>
-                    <li><strong>Migration & Birthplace: </strong> e.g., Residential Mobility, Birthplace, etc.</li>
-                    <li><strong>Technology Access: </strong> e.g., Household Tech, etc.</li>
-                </ul> 
-                <p><strong>Key Use Cases:</strong> </p>
-                <ul>
-                    <li><strong>Market research: </strong> e.g., income brackets, household types, etc.</li>
-                    <li><strong>Public health: </strong> e.g., poverty rates, insurance coverage, etc.</li>
-
-                    <li><strong>Urban planning: </strong> e.g., commuting patterns, housing stock, etc.</li>
-                </ul> 
-
-                
-
-                
-                <h4>Technical Highlights</h4>
-                <div class="row-fluid">
-                    <div class="span6">
-                        <h5>Key Techniques</h5>
-                        <ul>
-                            
-                            <li><strong>SQL</strong> Random Sampling Methods</li>
-                            <li>Common Table Expression (CTE)</li>
-                            <li>Window Function</li>
-                            <li>ODBC Connection (RODBC <strong>R</strong> Package)</li>
-                            <li>Exploratory Data Analysis (EDA)</li>
-                            <li>Principal Component Analysis (PCA)</li>
-                            
-                        </ul>
-                    </div>
-                    <div class="span6">
-                        
-                    </div>
-                </div>
-
-                
-                <h4>SQL Data Preparation</h4>
-
-<!-- Figure 8 -->
-
-<div class="figure-container">
-    <img src="static/NY.png" alt="Figure 1: Correlation between all variables"style="width: 10%;">
-    <p><strong>Figure 1.</strong> Ranking High-Order States</p>
-    <img src="static/feature33.png" alt="Figure 2: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 2.</strong> Selected Features</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p>SQL is used for data extraction, cleaning, and preprocessing, tasks efficiently handled by relational databases. This ensures data quality and relevance before statistical analysis in R. <strong>Steps:</strong></p>
-        <ul>
-            <li><p><strong>Identify High-Order States: </strong>A query calculates the total number of orders per state using a <strong>Common Table Expression</strong> (CTE) for better structure and readability. The CTE (StateOrders) groups order data by state and counts the total number of orders for each. From this result, <strong>New York</strong> (NY) is selected as the focus due to having the highest order count, ensuring a representative dataset for analysis.</p>
-            <li><p><strong>Select Relevant Columns: </strong>Ten numerical columns from the <strong>ZipCensus</strong> table are chosen, capturing diverse attributes (e.g., population, income, education). These columns avoid redundancies (e.g., totals vs. breakdowns) to ensure independent variables for PCA.</p>
-            <li><p><strong>Filter and Join Data: </strong>Data is filtered to include only NY state records by joining the <strong>Orders</strong> and <strong>ZipCensus</strong> tables on ZIP codes. This ensures geographical consistency.</p>
-            <li><p><strong>Random Sampling: </strong>A 2% random sample is extracted using <strong>ORDER BY NEWID()</strong>. Sampling reduces computational load while preserving data distribution for exploratory analysis.</p>
-        </ul>
-</div>
-
-<h4>Four SQL Random Sampling Methods</h4>
-
-<div class="figure-container">
-
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p><strong>Method 1</strong>: Random Shuffling with <strong>NEWID()</strong></p>
-    <ul>
-        <li><p><strong>Description: </strong>Randomizes the entire dataset using <strong>ORDER BY NEWID()</strong>, then selects the top N% of records.</p>
-        <li><p><strong>Use Case: </strong>Ideal for simple, unbiased random sampling where no stratification or grouping is required.</p>
-        <li><p><strong>Strengths: </strong>Guarantees equal probability of selection for all records.</p>
-        <li><p><strong>Weaknesses: </strong>Performance-intensive for large datasets due to full-table sorting.</p>
-    </ul>
-    <p><strong>Method 2</strong>: Pseudo Random Sampling with Prime Numbers</p>
-    <ul>
-        <li><p><strong>Description: </strong>Assigns sequential row numbers, applies a mathematical formula (e.g., (<strong>RowNumber * 71 + 199) % 100 < 10</strong>), and selects rows based on the result.</p>
-        <li><p><strong>Use Case: </strong>Efficient for large datasets where <strong>NEWID()</strong> is too slow.</p>
-        <li><p><strong>Strengths: </strong>Avoids sorting overhead, improving performance.</p>
-        <li><p><strong>Weaknesses: </strong>Pseudorandomness depends on prime number selection; patterns may emerge, compromising true randomness.</p>
-    </ul>
-    <p><strong>Method 3</strong>: Stratified Sampling by Category</p>
-    <ul>
-        <li><p><strong>Description: </strong>Uses a <strong>Window Function</strong> to generate row numbers partitioned by a categorical variable (e.g., <strong>IsActive</strong>), then selects records at fixed intervals (e.g., every 100th row).</p>
-        <li><p><strong>Use Case: </strong>Maintains the original proportion of categories (e.g., 1:0 ratio) in the sample.</p>
-        <li><p><strong>Strengths: </strong>Preserves distribution of categorical variables.</p>
-        <li><p><strong>Weaknesses: </strong>Fails if category sizes are too small (e.g., rare categories may not appear in the sample).</p>
-    </ul>
-    <p><strong>Method 4</strong>: Balanced Group Sampling</p>
-    <ul>
-        <li><p><strong>Description: </strong>Partitions data by a skewed variable (e.g., gender), shuffles within each group using <strong>NEWID()</strong>, and selects an equal number of samples per group.</p>
-        <li><p><strong>Use Case: </strong>Ensures balanced representation of underrepresented groups (e.g., equal male/female samples).</p>
-        <li><p><strong>Strengths: </strong>Mitigates bias from imbalanced groups.</p>
-        <li><p><strong>Weaknesses: </strong>Requires explicit grouping variables and may fail if groups have extremely low counts.</p>
-    </ul>
-    <p><strong>Which Method 1 Is Used? </strong>: Method 1 is chosen for its simplicity, true randomness, and suitability for exploratory analysis where no specific stratification is required.</p>
-</div>
-
-<h4>R Statistical Analysis</h4>
-
-<div class="figure-container">
-    <img src="static/10D.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 3.</strong> Scatter Plots for All Variable Pairs</p>
-    <img src="static/pcavar.png" alt="Figure 8: Correlation between Y and predictors"style="width: 30%;">
-    <p><strong>Figure 4.</strong> Covariance Matrix and Eigen Analysis</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    <p>R specializes in statistical modeling and visualization. It processes the preprocessed SQL data to perform PCA, compute eigenvalues/vectors, and generate plots.</p>
-    <ul>
-        <li><p><strong>Database Connection: </strong>The <strong>RODBC</strong> package connects R to the SQL database, retrieving the preprocessed 2% sample for analysis.</p>
-        <li><p><strong>Initial Visualization: </strong>The <strong>pairs()</strong> function generates scatter plots for all variable pairs, providing a preliminary view of correlations and distributions in the 10D dataset.</p>
-        
-    </ul>
-    <p>Covariance Matrix & Eigen Analysis.</p>
-    <ul>
-        
-        <li><p>Eigenvalues (<strong>lambda</strong>) and eigenvectors (U) are derived using <strong>eigen()</strong>, representing variance magnitude and principal directions, respectively.</p>
-        <li><p>A scree plot (<strong>plot(lambda, type='o')</strong>) visualizes eigenvalues, showing variance explained by each principal component (PC). The <strong>First Two</strong> PCs capture <strong>most variance</strong>, while others represent noise</p>
-    </ul>
-</div>
-
-<h4>Projection onto Principal Components</h4>
-
-<div class="figure-container">
-    <img src="static/PCA.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
-    <p><strong>Figure 5.</strong> 2D projection</p>
-</div>
-
-<!-- Explanation -->
-<div class="explanation">
-    
-    <ul>
-        <li><p>The first two eigenvectors (U[,1] and U[,2]) transform the centered data into 2D coordinates (<strong>f1, f2</strong>).</p>
-        <li><p>A scatter plot (plot(f1, f2)) visualizes the 2D projection. The <strong>triangular cluster</strong> structure emerges, indicating underlying patterns in the reduced dimensions.</p>
-    </ul>
-    <p>Visualization & Interpretation</p>
-    <ul>
-        <li><p>Eigenvalue Plot confirms the dominance of the first two PCs, justifying dimensionality reduction.</p>
-        <li><p>2D Projection Plot reveals clustered data points forming a triangle, suggesting distinct subgroups within the NY demographic dataset.</p>
-        <li><p>By projecting into PCA space, we're uncovering <strong>latent dimensions</strong> in the demographic data.</p>
-    </ul>
-    <p>The clusters in 2D space may correspond to real-world groupings, such as:</p>
-    <ul>
-        <li><p>ZIP codes with predominantly young professionals.</p>
-        <li><p>Areas with high poverty and low education.</p>
-        <li><p>High-income neighborhoods with strong transit access.</p>
-    </ul>
-    <p>These insights are not obvious when looking at the raw dataset, but <strong>PCA</strong> helps reveal them.</p>
-</div>
-</details>
+            </div>
+            <div class="span5 profile-photo-container">
+                <img src="static/profile.jpg" alt="Wen Hao Chung" class="profile-photo">
             </div>
         </div>
     </div>
-    
-</div>
 
-
-
-<!-- Footer -->
-<div class="footer container">
-    <div id="copyright">
-        &copy; 2025 Wen-Hao Chung. All rights reserved.
+    <!-- Footer -->
+    <div class="footer container">
+        <div id="copyright">
+            &copy; 2025 Wen-Hao Chung. All rights reserved.
+        </div>
     </div>
-</div>
 
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-collapse.js"></script>
-<script src="js/bootstrap-scrollspy.js"></script>
-<script>
-$(document).ready(function(){
-    // Smooth scrolling
-    $('a[href^="#"]').on('click', function(event) {
-        event.preventDefault();
-        var target = $(this.getAttribute('href'));
-        if( target.length ) {
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top - 50
-            }, 1000);
-        }
-    });
-
-    // Mobile menu toggle
-    $('.btn-navbar').click(function(){
-        $('.nav-collapse').toggleClass('in');
-    });
-});
-</script>
-
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.nav li').removeClass('active');
+            $('.nav a[href="index.html"]').parent().addClass('active');
+        });
+    </script>
+    <script>
+        document.addEventListener('click', function (event) {
+            var toggle = document.querySelector('.navbar .btn-navbar');
+            var menu = document.querySelector('.navbar .nav-collapse');
+        
+            // 如果選單是展開的，並且點擊的不是選單或按鈕本身
+            if (menu.classList.contains('in') && !menu.contains(event.target) && !toggle.contains(event.target)) {
+                // 觸發收合
+                toggle.click();
+            }
+        });
+    </script>
 </body>
 </html>
