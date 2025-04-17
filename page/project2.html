@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Wen-Hao Chung - Project II</title>
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/media-queries.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,800" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body data-spy="scroll">
+    <!-- 相同的導航列，僅修改 active 狀態 -->
+
+
+        <!-- ✅ 這裡放導航列 -->
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- 手機選單按鈕 -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+    
+                    <!-- 網站品牌 -->
+                    <a class="brand" >Ivan's Portfolio</a>
+    
+                    <!-- 導航列內容 -->
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="resume.html">Resume</a></li>
+                            <li><a href="project1.html">Project I</a></li>
+                            <li class="active"><a href="project2.html">Project II</a></li>
+                            <li><a href="project3.html">Project III</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Resume Content -->
+
+    <div class="container content" id="home">
+
+        <!-- Portfolio Section -->
+        <div class="row-fluid" id="portfolio2"style="text-align: justify;">
+            <h2 class="page-title">Project II - Machine Learning Classifier</h2>
+            
+            <div class="span12">
+                <h3>Insurance Claim Prediction Model</h3>
+                <div class="project-details">
+    
+                    <h4>Objective</h4>
+                    <p> The primary objective of this project is to develop a <strong> XGBoost Classifier </strong>model to predict insurance claim approvals based on vehicle and repair-related factors. The model aims to automate the claim assessment process, reducing manual review efforts and operational costs.</p>
+                    <p><strong>Key Benefits:</strong> </p>
+                    <ul>
+                        <li><strong> Operational Efficiency: </strong>  Minimize time and labor spent on manual claim evaluations.</li>
+                        <li><strong> Fraud Mitigation: </strong>  Identify patterns indicative of fraudulent claims through data-driven insights.</li>
+                        <li><strong> Scalability: </strong>  Enable rapid processing of large claim volumes without compromising accuracy.</li>
+                        <li><strong> Consistency: </strong>  Ensure standardized decision-making across all claims, reducing human bias.</li>
+                        
+                    </ul> 
+    
+                    <h4>Dataset Overview</h4>
+                    <p><strong>Total Records:</strong>32,258 claims.</p>
+    
+                    
+                    <p><strong>Features:</strong>23 variables, including:</p>
+                    <ul>
+                        <li><strong>Vehicle Details: </strong> Maker, Model, Color, Engine Size, Fuel Type, Registration Year.</li>
+                        <li><strong>Accident/Repair Data:</strong> Breakdown Date, Repair Cost, Repair Hours, Repair Complexity.</li>
+                        <li><strong>Other Variables:</strong> Price, Seat/Door Count, Issue Type, Category Anomaly Flag.</li>
+                    </ul>
+                    <p><strong>Target Variable: Claim </strong> (binary: 1 = Approved, 0 = Denied).</p>
+    
+                    <p><strong>Key Observations:</strong></p>
+                    <ul>
+                        <li>Minimal missing data (only 1 row with NaN values).</li>
+                        <li>High cardinality in the<strong>Model</strong> feature (200+ unique categories).</li>
+                        <li>Imbalanced target distribution (25,976 denied vs. 6,281 approved claims).</li>
+           
+                    </ul>
+    
+                    <h4>Methodology</h4>
+                    <p>Data Preprocessing:</p>
+                    <ul>
+                        <li><strong>Missing Values:</strong> Single NaN row removed.</li>
+                        <li><strong>Categorical Encoding:</strong> Frequency Encoding for high-cardinality <strong>Model</strong> variable to avoid dimensional explosion.</li>
+                        <li><strong>Scaling:</strong> Robust Scaler applied to numerical features to mitigate outlier impact.</li>
+                    </ul>
+                    <p>Feature Selection:</p>
+                    <ul>
+                        <li>Statistical significance testing (p-value < 0.05) reduced features from 99 to 13.</li>
+                        <li>Correlation analysis and Random Forest importance used for validation.</li>
+                    </ul>
+                    <p>Model Development:</p>
+                    <ul>
+                        <li><strong>Algorithm:</strong> XGBClassifier().</li>
+                        <li><strong>Class Imbalance:</strong> SMOTE applied to balance the dataset.</li>
+                        <li><strong>Validation:</strong> 80-20 train-test split with K-fold cross-validation (5 folds).</li>
+                    </ul>
+                    <p>Model Evaluation:</p>
+                    <ul>
+                        <li><strong>Baseline Classifiers: </strong>Nine classifiers were evaluated:<br>Adaptive Boosting Classifier, <br>Gradient Boosting Classifier, <br>Extreme Gradient Boosting (XGBoost) Classifier, <br>Logistic Regression Classifier, <br>Random Forest Classifier, <br>Extremely Randomized Trees (Extra Trees) Classifier, <br>K-Nearest Neighbors (KNN) Classifier, <br>Support Vector Classification (SVM Classifier), <br>Ridge Regression Classifier.</li>
+                        <li><strong>Bagging Extension:</strong> Each classifier was wrapped in a <strong>BaggingClassifier</strong> to create 18 total models (9 base + 9 bagged versions).</li>
+                        <li><strong>Performance Comparison:</strong> Highest Accuracy: XGBClassifier, followed by RandomForestClassifier. Bagged versions of XGBClassifier underperformed (accuracy drop), likely due to increased variance.</li>
+                        <li><strong>XGBoost Classifier </strong> was selected for its superior performance.</li>
+                        <li><strong>K-fold Metrics:</strong> Accuracy and Standard Deviation For All Folds:</li>
+                        <li><strong>0.9617 ± 0.0037 </strong> Average accuracy ± Standard Deviation</li>
+                        <li><strong>0.9450 ± 0.0223 </strong> Average precision ± Standard Deviation</li>
+                        <li><strong>0.8535 ± 0.0060 </strong> Average recall ± Standard Deviation</li>
+                        <li><strong>0.8968 ± 0.0099 </strong> Average F1 ± Standard Deviation</li>
+                    </ul>
+    
+                    <h4>Challenges and Solutions</h4>
+                    <p>Project Challenges</p>
+                    <ul>
+                        <li><strong>Imbalanced Data:</strong> Low positive class (claim approvals) led to biased model performance and low recall.</li>
+                        <li><strong>High Cardinality:</strong> The Model feature with 200+ categories risked overfitting and computational inefficiency.</li>
+                        <li><strong>Outliers and Non-Normal Distributions:</strong> Skewed numerical variables (e.g., Repair Cost) distorted model coefficients.</li>
+                        <li><strong>Multicollinearity:</strong> Strong correlations between features (e.g., Maker_Ford and repair_complexity) complicated interpretation.</li>
+                        <li><strong>Production Scalability:</strong> Ensuring consistent preprocessing (e.g., frequency encoding) for unseen data.</li>
+                    </ul>
+                    <p>Solutions</p>
+                    <ul>
+                        <li><strong>Class Imbalance:</strong> Applied SMOTE to synthetically oversample the minority class, improving recall and F1-score.</li>
+                        <li><strong>High Cardinality:</strong> Used Frequency Encoding for Model, replacing categories with their occurrence rates.</li>
+                        <li><strong>Outlier Handling:</strong> Implemented Robust Scaler to normalize numerical features using median/IQR, reducing outlier sensitivity.</li>
+                        <li><strong>Feature Selection:</strong> Combined p-value filtering, correlation analysis, and domain knowledge to retain 9 critical features (e.g., repair_cost, Maker_Ford, category_anomaly).</li>
+                    </ul>    
+                    <p>Production(code) Readiness:</p>
+                    <ul>
+                        <li>Saved preprocessing parameters (Robust Scaler, frequency maps) and model as binary files (.pkl) for consistency.</li>
+                        <li>Deployed input validation and batch prediction functions to handle real-world data variability.</li>
+                        <li>Stored cross-validation metrics (accuracy, recall) in JSON for transparent performance tracking.</li>
+    
+                    </ul>  
+    
+                    <h4>Technical Highlights</h4>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <h5>Key Techniques</h5>
+                            <ul>
+    
+                                <li>Random Forest Classifier feature importances</li>
+                                <li>XGBoost Classifier model</li>
+                                <li>Bagging Classifier</li>
+                                <li>Robust Scaling</li>
+                                <li>Synthetic Minority Oversampling Technique(SMOTE)</li>
+                                <li>KFold cross-validation</li>
+                            </ul>
+                        </div>
+                        <div class="span6">
+                            <h5>Model Performance</h5>
+                            <ul>
+                                <li>Accuracy: 96.2%</li>
+                                <li>Recall: 85.4%</li>
+                                <li>Precision: 94.5%</li>
+                                <li>F1 Score: 89.7%</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <h4>Demo</h4>
+                    <pre>
+                        <h1>Claim Prediction Demo</h1>
+                        <div class="input-container">
+                            <label>Case Anomaly (0 or 1): <input type="number" id="category_anomaly"></label>
+                            <label>Brand (Ford/Dacia): <input type="text" id="Maker"></label>
+                            <label>Model: <input type="text" id="Model"></label>
+                            <label>Number of Seats (2-20): <input type="number" id="Seat_num"></label>
+                        </div>
+                        <div class="input-container">
+                            <label>Number of Doors (2-7): <input type="number" id="Door_num"></label>
+                            <label>Repair Cost: <input type="number" id="repair_cost"></label>
+                            <label>Repair Time: <input type="number" id="repair_hours"></label>
+                            <label>Repair Complexity (1-4): <input type="number" id="repair_complexity"></label>
+                        </div>
+                        <div class="button-container">
+                            <button id="predictButton">Predict</button>
+                            <p id="result"></p>
+                            <p id="error"></p>
+                        </div>
+                        <script src="static/script.js"></script>
+                    </pre>
+                    <h4>Numerical Figures</h4>
+    
+    <!-- Figure 8 -->
+    
+    <div class="figure-container">
+        <img src="../static/fig1_numeric.jpg" alt="Figure 9: Correlation between all variables"style="width: 70%;">
+        <p><strong>Figure 1.</strong> Numerical Figure Distribution</p>
+    </div>
+    
+    <!-- Explanation -->
+    <div class="explanation">
+        <p>For numeric features, check whether they follow a <strong> normal distribution </strong> and identify any <strong> outliers </strong> to determine the appropriate scaler to use. Since none of the features follow a normal distribution, and most of them contain outliers, using a <strong> Robust Scaler </strong> might be the better option to scale the variables. This helps mitigate the impact of extreme values and <strong> prevents regression coefficient distortion</strong> caused by extreme scale differences.</p>
+    </div>
+    
+    <h4>Categorical Features</h4>
+    
+    <div class="figure-container">
+        <img src="../static/fig2_cates.png" alt="Figure 8: Correlation between Y and predictors"style="width: 65%;">
+        <p><strong>Figure 2.</strong> Top 10 claim cases Brands</p>
+    </div>
+    
+    <!-- Figure 9 -->
+    <div class="figure-container">
+        <img src="../static/fig3_cates.png" alt="Figure 9: Correlation between all variables"style="width: 65%;">
+        <p><strong>Figure 3.</strong> Top 10 claim approved ratio Brands</p>
+    </div>
+    
+    <!-- Explanation -->
+    <div class="explanation">
+        <ul>
+            <li><p>For <strong>categorical variable ‘Maker’</strong>, <strong> Ford </strong> is the highest amount of claim cases maker, and <strong> Ferrari </strong> and <strong> Dacia </strong> are the top two highest claim ratio makers.</p>
+            <li><p>Since the variable ‘Model’ has over 200 unique categories, applying <strong> One-Hot Encoding </strong> would create more than <strong> 200 additional columns </strong>, leading to <strong> dimensional explosion </strong>. This significantly increases computational cost and may result in model overfitting. To address this issue, we use <strong> Frequency Encoding </strong> to transform the Model variable. Moreover, before feeding the data ‘Model’ into the model, RobustScaler will be applied together with other numerical variables, ensuring a more stable and reliable transformation, because the frequency values may vary significantly across different Model categories. Directly using unscaled ‘Model_FreqEncoded’ could negatively impact the model.</p>
+        </ul>
+    </div>
+    
+    <h4>Correlation Between the Independent Variables and Y(Claim)</h4>
+    
+    
+    
+    <!-- Figure 9 -->
+    <div class="figure-container">
+        <img src="../static/fig5_corr.png" alt="Figure 9: Correlation between all variables"style="width: 30%;">
+        <p><strong>Figure 4.</strong> Correlation between Y and predictors</p>
+    </div>
+    
+    <!-- Explanation -->
+    <div class="explanation">
+        <p>For the correlation between the independent variables and Y, after taking the <strong> absolute values </strong>, they are ranked from top to bottom in descending order of their correlation with Y. The variable <strong> category_anomaly </strong>has the highest correlation with Y. Additionally, <strong> Model_FreqEncoded and Maker_Ford </strong>are highly correlated, and <strong> repair_complexity </strong> also has a strong correlation with <strong> Maker_Ford </strong>. Therefore, category_anomaly, Model_FreqEncoded, Maker_Ford, and repair_complexity will be included in the Model Evaluation to run experiments and determine which combination yields the highest accuracy.</p>
+    </div>
+    
+    
+</div>
+    </div>
+    </div>
+    </div>
+    
+    
+
+    <!-- Footer -->
+    <div class="footer container">
+        <div id="copyright">
+            &copy; 2025 Wen-Hao Chung. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // 先清掉所有 active
+          document.querySelectorAll(".nav li").forEach(li => li.classList.remove("active"));
+      
+          // 找到目前網址的檔名（如 resume.html）
+          const currentPage = window.location.pathname.split("/").pop();
+      
+          // 根據 href 配對加上 active
+          document.querySelectorAll(".nav li a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+              link.parentElement.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <script>
+        document.addEventListener('click', function (event) {
+            var toggle = document.querySelector('.navbar .btn-navbar');
+            var menu = document.querySelector('.navbar .nav-collapse');
+        
+            // 如果選單是展開的，並且點擊的不是選單或按鈕本身
+            if (menu.classList.contains('in') && !menu.contains(event.target) && !toggle.contains(event.target)) {
+                // 觸發收合
+                toggle.click();
+            }
+        });
+    </script>
+</body>
+</html>

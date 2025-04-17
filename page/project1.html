@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Wen-Hao Chung - Project I</title>
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/media-queries.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,800" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body data-spy="scroll">
+    <!-- 相同的導航列，僅修改 active 狀態 -->
+
+
+        <!-- ✅ 這裡放導航列 -->
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- 手機選單按鈕 -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+    
+                    <!-- 網站品牌 -->
+                    <a class="brand" >Ivan's Portfolio</a>
+    
+                    <!-- 導航列內容 -->
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="resume.html">Resume</a></li>
+                            <li class="active"><a href="project1.html">Project I</a></li>
+                            <li><a href="project2.html">Project II</a></li>
+                            <li><a href="project3.html">Project III</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Portfolio Section -->
+<div class="container content">
+<div class="row-fluid" id="portfolio"style="text-align: justify;">
+    <h2 class="page-title">Project I - Time Series</h2>
+    
+    <div class="span12">
+        <h3>Russell 2000 Index (Time-Series Prediction)</h3>
+        <div class="project-details">
+
+            <h4>Objective</h4>
+            <p> The primary objective of this project is to develop a robust predictive framework for forecasting the <strong> Russell 2000 Index Close Price </strong> two days ahead (t+2). By leveraging historical data from multiple U.S. and international market indices, technical indicators, and macroeconomic variables, the model aims to provide actionable insights for investors while avoiding reliance on incomplete intraday data.</p>
+            <p><strong>Key Benefits:</strong> </p>
+            <ul>
+                <li><strong> Practicality: </strong>  Predictions for t+2 allow full utilization of finalized daily data (e.g., closing prices, volume) without requiring real-time updates.</li>
+                <li><strong> Risk Mitigation: </strong>  Integration of volume-based trend confirmation reduces false signals in trading strategies (e.g., Golden/Death Cross).</li>
+                <li><strong> Scalability: </strong>  The framework can be extended to other indices or asset classes, e.g. DJI, NASDAQ, NYSE, S&P close.</li>
+                <li><strong> Market Insight: </strong>  Analysis of small-to-mid-cap companies via the Russell 2000 offers a proxy for broader economic health.</li>
+                <li><strong> Additional Insight: </strong>  The exclusion of Russell-specific features to prevent data leakage ensures generalizability and compliance with real-world deployment constraints.</li>
+            </ul>                
+            
+            <h4>Dataset Overview</h4>
+            <p>Data Source: <a href="https://archive.ics.uci.edu/dataset/554/cnnpred+cnn+based+stock+market+prediction+using+a+diverse+set+of+variables"target="_blank">CNNpred Dataset</a></p>
+            <p> &nbsp;&nbsp; The dataset comprises <strong>five CSV files (DJI, NASDAQ, NYSE, RUSSELL, S&P 500) </strong> from 2010–2017, each containing 1,984 rows × 84 columns.</p>
+            <p><strong>Key features include:</strong> </p>
+            <ul>
+                <li><strong>Basic Market Data: </strong> Date, Close, Volume (Rate of Change).</li>
+                <li><strong>Technical Indicators: </strong> Momentum (mom, mom1–3), ROC, EMA.</li>
+                <li><strong>Macroeconomic Variables: </strong> Treasury rates, bond spreads, commodity prices (Oil, Gold), FX rates.</li>
+                <li><strong>Company Stock Prices: </strong> AAPL, AMZN, MSFT, etc.</li>
+                <li><strong>International Indices & Futures: </strong> CAC 40, DAX, Nikkei.</li>
+            </ul> 
+            <p><strong>Key Variations:</strong> </p>
+            <ul>
+                <li><strong>Index-Specific Futures</strong> (e.g., CAC-F in DJI, KOSPI-F in NASDAQ).</li>
+                <li><strong>Consistency: </strong> Commodity and currency data (e.g., Brent, copper-F) are standardized across files.</li>
+            </ul> 
+            <p><strong>Data Limitations:</strong> </p>
+            <ul>
+                <li><strong>Temporal Constraints: </strong> Data ends in 2017; newer market regimes (e.g., post-COVID) are unaddressed.</li>
+            </ul> 
+
+            <h4>Methodology</h4>
+            <p><strong>Trend Analysis & Trading Strategy</strong></p>
+            <ul>
+                <li><strong>Golden/Death Cross: </strong> 23-day EMA (short-term) and 69-day EMA (long-term) crossovers generate buy/sell signals.</li>
+                <li><strong>Volume Validation: </strong> High trading volume (ROC) confirms trend legitimacy, reducing false breakouts.</li>
+            </ul> 
+            <p><strong>Time-Series Forecasting (HWES)</strong> </p>
+            <ul>
+                <li><strong>Holt-Winters Exponential Smoothing: </strong> Model assumes multiplicative trend/seasonality (300-day period). Achieved RMSE = 41.16 but lacks adaptability to sudden market shifts.</li>
+            </ul> 
+            <p><strong>Machine Learning for t+2 Prediction</strong> </p>
+            <ul>
+                <li><strong>Feature Selection: </strong>
+                        P-value Filtering (p < 0.05).
+                    &	Correlation (>80% with target).
+                    &	F-regression (top 25 ANOVA F-value features).
+                    &	Random Forest Importance (tree-based rankings).</li>
+                    
+                <li><strong>Final Feature Set: </strong> Hybrid selection combining technical indicators (e.g., NASDAQ_Close, S&P_EMA_50), macroeconomic variables (DGS10, DTB4WK), and volume metrics.</li>
+                <li><strong>Model Selection: </strong>
+                        <strong>ElasticNet with PCA: </strong> Outperformed stacked models.
+                    and	<strong>TimeSeriesSplit: </strong> Ensured temporal integrity during cross-validation (avg. RMSE = 47.48).</li>
+                    
+                <li><strong>Critical Additions: </strong>Avoiding Data Leakage: Excluded Russell-specific features and enforced time-series splits.</li>
+            </ul> 
+
+            <h4>Challenges and Solutions</h4>
+            <p><strong>Project Challenges:</strong></p>
+            <ul>
+                <li>Predicting stock prices is inherently complex due to the multitude of influencing factors. This project focuses on forecasting the <strong> Russell 2000 Index Close Price </strong>using data from five major U.S. indices (DJI, NASDAQ, NYSE, S&P 500, RUSSELL). A critical challenge arises from the impracticality of predicting the next day’s close using today’s data, as incomplete or delayed intraday metrics (e.g., finalized closing prices, volume) may not be available before the next trading session.</li>
+                <li>Additionally, financial time series like RUSSELL_Close are highly <strong> non-stationary </strong>, exhibiting <strong> volatility clustering </strong>and unpredictable shifts driven by external events (e.g., policy changes, geopolitical tensions). The reliance on historical patterns also introduces risks: while models like <strong> Holt-Winters Exponential Smoothing (HWES)</strong> assume recurring <strong> trends and seasonality </strong>, real-world markets often deviate from such assumptions, especially during black swan events.</li>
+                <li>Furthermore, the dataset’s high dimensionality (84 features across five indices) amplifies noise and <strong> multicollinearity </strong>, complicating feature selection.</li>
+            </ul>
+            <p><strong>Solutions:</strong></p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;To address these challenges, a <strong> dual-method </strong>approach was implemented:</p>
+            <p> <strong>1.	Holt-Winters Exponential Smoothing (HWES):</strong></p>
+            <ul>
+                <li>This time-series model was trained on six years of RUSSELL_Close data, assuming a <strong> multiplicative trend </strong> (trend=’mul’) and <strong> multiplicative seasonality </strong> (seasonal=’mul’) with a 300-day seasonal period. The model captured <strong> cyclical patterns </strong> (e.g., annual trends) and achieved an <strong> RMSE of 41.16</strong>. However, its rigidity in assuming fixed seasonality limits adaptability to sudden market disruptions.</li>
+            </ul>               
+            <p> <strong>2.	Machine Learning Regressors for t+2 Prediction:</strong></p>
+            <ul>
+                <li>To bypass reliance on incomplete daily data, the target was shifted to RUSSELL_Close_t+2, allowing the use of finalized prior-day metrics. To prevent <strong> data leakage </strong>, all Russell-specific features were excluded, and predictors were restricted to DJI, NASDAQ, NYSE, and S&P 500 data. A hybrid feature selection strategy combined statistical significance (p-value < 0.05), correlation (>80%), and tree-based importance rankings. The final model, ElasticNet with PCA, reduced RMSE to 46.32 by addressing multicollinearity and overfitting.</li>
+                <li><strong> Robust Validation</strong>: <strong> Time-series splits</strong>  replaced random K-fold to avoid future data leakage.</li>
+            </ul>   
+            <p> &nbsp;&nbsp;This <strong> dual methodology</strong>  balances theoretical assumptions (<strong> HWES seasonality</strong>) with empirical adaptability (<strong> machine learning</strong>), offering a pragmatic framework for financial forecasting.</p>
+
+            <h4>Technical Highlights</h4>
+            <div class="row-fluid">
+                <div class="span6">
+                    <h5>Key Techniques</h5>
+                    <ul>
+                        <li>Exponential Moving Average(EMA) Crossovers</li>
+                        <li>Holt-Winters Exponential Smoothing (HWES)</li>
+                        <li>ElasticNet Regression</li>
+                        <li>Stacked Model</li>
+                        <li>Principal Component Analysis (PCA)</li>
+                        
+                    </ul>
+                </div>
+                <div class="span6">
+                    <h5>Model Performance</h5>
+                    <ul>
+                        <li>Root Mean Squared Error (RMSE): 46.322</li>
+                        <li>R² : 0.832</li>
+                       
+                    </ul>
+                </div>
+            </div>
+
+            
+            <h4>Trading Strategy based on Golden Cross and Volume(RoC)</h4>
+
+<!-- Figure 8 -->
+
+<div class="figure-container">
+<img src="../static/EMAtrading.png" alt="Figure 9: Correlation between all variables">
+<p><strong>Figure 1.</strong> RUSSELL 2000 Trading Strategy</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+<p>The strategy is based on the Moving Average Crossover:</p>
+    <ul>
+        <li><p><strong>Buy Signal (Golden Cross): </strong>When the short-term EMA (ema23) <strong>crosses above</strong> the long-term EMA (ema69), it indicates strengthening upward momentum. Traders interpret this as a bullish trend starting.</p>
+        <li><p><strong>Sell Signal (Death Cross): </strong>When the short-term EMA <strong>crosses below</strong> the long-term EMA, it signals weakening momentum and a potential bearish trend.</p>
+        <li><p>Volume acts as a "<strong>truth-teller</strong>" for price movements, reducing false signals, because it reflects <strong>market participation</strong>, and validates price movements. Therefore, considering RUSSELL_Volume(RoC) <strong>improves accuracy</strong>.</p>
+    </ul>
+</div>
+
+<h4>(method 1)By using Holt-Winters Exponential Smoothing (HWES) model to forecast the future values of the RUSSELL_Close index</h4>
+
+<div class="figure-container">
+<img src="../static/HoltWinter.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+<p><strong>Figure 2.</strong> HWES Model</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+<p>This time-series model was trained on six years of RUSSELL_Close data, assuming a <strong> multiplicative trend </strong> (trend=’mul’) and <strong> multiplicative seasonality </strong> (seasonal=’mul’) with a 300-day seasonal period. The model captured <strong> cyclical patterns </strong> (e.g., annual trends) and achieved an <strong> RMSE of 41.16</strong>. However, its rigidity in assuming fixed seasonality limits adaptability to sudden market disruptions.</p>
+</div>
+
+<h4>(method 2)ElasticNet Regressor for t+2 Prediction: Plotting the Predictions vs. Actual RUSSELL_Close values on a 45-degree line</h4>
+
+<div class="figure-container">
+<img src="../static/predActual.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+<p><strong>Figure 3.</strong> 2017 RUSSELL 2000 - Close Price</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+
+<ul>
+    <li><p>Next, We predict RUSSELL_Close value by using ElasticNet Regressor (the target was shifted to RUSSELL_Close_t+2), and we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2.</p>
+    <li><p>After utilizing <strong>80%</strong> of the data (i.e. <strong>2010 to 2016</strong>) to train the model, we proceeded to validate its performance by making predictions on the subsequent <strong>20%</strong> of the data (i.e. <strong>2017</strong>). To assess the accuracy of these predictions, we plotted the <strong>predicted vs. actual</strong> values of RUSSELL_Close_t+2, comparing them against the <strong>45-degree dashed reference line</strong>, which represents an ideal scenario where predictions perfectly match the actual values. Upon examining the plot, we observed that the predicted values <strong>closely align with</strong> this reference line, indicating that the model effectively captures the underlying trend in the data and demonstrates strong predictive performance.</p>
+</ul>
+<p>How to Interpret a Prediction vs. Actual Plot on a <strong>45-Degree Line</strong>?</p>
+<ul>
+    <li><p>The <strong>X-axis</strong> represents the <strong>actual values</strong> (true outcomes).</p>
+    <li><p>The <strong>Y-axis</strong> represents the <strong>predicted values</strong> (model's output).</p>
+    <li><p>A <strong>dotted 45-degree diagonal line</strong> represents <strong>perfect predictions</strong>, meaning that if all points lie exactly on this line, the model's predictions are <strong>100% accurate</strong>.</p>
+    <li><p><strong>Overestimation</strong>: Most points are <strong>above</strong> the line → Model <strong>predicts too high</strong>.</p>
+    <li><p><strong>Underestimation</strong>: Most points are <strong>below</strong> the line → Model <strong>predicts too low</strong>.</p>
+    <li><p><strong>Weak Model Performance</strong>: The points are <strong>widely scattered</strong>, far from the 45-degree line.</p>
+</ul>
+
+</div>
+
+<div class="figure-container">
+<img src="../static/variables.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+<p><strong>Figure 4.</strong> Final Feature Set</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+<p>How to select <strong>features</strong>?</p>
+<ul>
+    <li><p>To ensure an optimal feature set for the predictive model, multiple feature selection techniques were employed. These methods included <strong>P-value Filtering</strong>, where features with a p-value less than 0.05 were retained; <strong>Correlation Analysis</strong>, selecting variables with an absolute correlation greater than 80% with the target; <strong>F-regression</strong>, which prioritized the top 25 features based on ANOVA F-values; and <strong>Random Forest Importance</strong>, a tree-based ranking approach to identify the most influential predictors. </p>
+    <li><p>The features that <strong>appeared consistently across these methods</strong> were selected as the initial set. To further refine the model, different feature group combinations were tested, evaluating their performance based on the <strong>lowest</strong> Root Mean Square Error (<strong>RMSE</strong>).</p>
+    <li><p>The final feature set was a hybrid selection incorporating key technical indicators (e.g., NASDAQ_Close, S&P_EMA_50), macroeconomic variables (e.g., DGS10, DTB4WK), and volume metrics, ensuring a balanced mix of market trends, economic conditions, and liquidity measures. A complete list of selected variables is presented in <strong>Figure 4</strong>.</p>
+</ul>
+</div>
+
+<div class="figure-container">
+<img src="../static/stacked.png" alt="Figure 8: Correlation between Y and predictors"style="width: 30%;">
+<p><strong>Figure 5.</strong> Stacked Model RMSE versus Base models</p>
+<img src="../static/model.png" alt="Figure 8: Correlation between Y and predictors"style="width: 50%;">
+<p><strong>Figure 6.</strong> Model Evaluation</p>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+<p><strong>Model Evaluation</strong></p>
+<ul>
+    
+    <li><p>After determining the significant features, the next step is to decide which model provides the best predictive performance. We first evaluated the performance of six different models: ElasticNet, SVR, DecisionTreeRegressor, AdaBoostRegressor, RandomForestRegressor, and ExtraTreesRegressor. Then, we use a Stacked Model to combine these six models and compare their RMSE. We find that ElasticNet has a lower RMSE than the Stacked Model, so we chose ElasticNet, as shown in <strong>Figure 5</strong>. </p>
+    <li><p>Next, we apply PCA to the final selected model and features to perform one last round of dimensionality reduction and compare the RMSE. Since ElasticNet using PCA achieves better performance <strong>(RMSE: 46.322)</strong>, we select ElasticNet with PCA as our final model for predicting RUSSELL_Close_t+2, as shown in <strong>Figure 6</strong>.</p>
+</ul>
+</div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    <!-- Footer -->
+    <div class="footer container">
+        <div id="copyright">
+            &copy; 2025 Wen-Hao Chung. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // 先清掉所有 active
+          document.querySelectorAll(".nav li").forEach(li => li.classList.remove("active"));
+      
+          // 找到目前網址的檔名（如 resume.html）
+          const currentPage = window.location.pathname.split("/").pop();
+      
+          // 根據 href 配對加上 active
+          document.querySelectorAll(".nav li a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+              link.parentElement.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <script>
+        document.addEventListener('click', function (event) {
+            var toggle = document.querySelector('.navbar .btn-navbar');
+            var menu = document.querySelector('.navbar .nav-collapse');
+        
+            // 如果選單是展開的，並且點擊的不是選單或按鈕本身
+            if (menu.classList.contains('in') && !menu.contains(event.target) && !toggle.contains(event.target)) {
+                // 觸發收合
+                toggle.click();
+            }
+        });
+    </script>
+</body>
+</html>

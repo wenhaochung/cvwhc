@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Wen-Hao Chung - Resume</title>
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/media-queries.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,800" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body data-spy="scroll">
+    <!-- 相同的導航列，僅修改 active 狀態 -->
+
+
+        <!-- ✅ 這裡放導航列 -->
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- 手機選單按鈕 -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+    
+                    <!-- 網站品牌 -->
+                    <a class="brand" >Ivan's Portfolio</a>
+    
+                    <!-- 導航列內容 -->
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right">
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="active"><a href="resume.html">Resume</a></li>
+                            <li><a href="project1.html">Project I</a></li>
+                            <li><a href="project2.html">Project II</a></li>
+                            <li><a href="project3.html">Project III</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Resume Content -->
+
+    <div class="container content" style="text-align: justify;">
+        <div class="row-fluid">
+            <h2 class="page-title">Resume</h2>
+            <!-- 原始 Resume 頁面內容 -->
+            <div class="span12">
+            
+                <h3>Education</h3>
+                <p></p>
+                <h4>British Columbia Institute of Technology</h4>
+                <p>Vancouver, Canada</p>
+                <ul>
+                    <li>Certificate in Applied Data Analytics</li>
+                    <li>Letter of Recommendation: <a href="../static/Ivan_reference.pdf" target="_blank">Click Here</a></li>
+                </ul>
+    
+                <h4>National Chengchi University</h4>
+                <p>Taipei, Taiwan</p>
+                <ul>
+                    <li>MSc in Statistics</li>
+                    <li><strong>Thesis</strong>: Aging population impact analysis using 2M+ healthcare records</li>
+                </ul>
+    
+                <h3>Professional Experience</h3>
+                <p></p>
+    
+    
+                <h4>BNP Paribas Assurance</h4>
+                <p>Outsourcing Management Specialist</p>
+                <ul>
+                    <li>Coordinated between IT and key business functions, and managed third-party vendors, overseeing application implementation, and annually adapted agreements to comply with new insurance regulations.</li>
+                    <li>Collaborated with the key stakeholders, product owners, external vendors to define solutions for end-to-end business problems, such as data integration between different applications via APIs.</li>
+                    <li>Led contract renewals and designed invoice methodologies, including optimizing billing systems and enhancing overall operational efficiency through Agile collaboration on business processes.</li>
+                </ul>
+                <p>Project Portfolio Management and Budget Planning</p>
+                <ul>
+                    <li>Collaborated with Finance on budget planning for over 50 projects annually, managing a total budget of approximately 3 million CAD across key areas including IFRS, Data Foundation, and e-Policy.</li>
+                    <li>Facilitated BNP Taiwan’s budget approval process with headquarters by providing analyses of closing financial reports and established a robust budget control system and internal monitoring process for financial management.</li>
+                    <li>Conducted monthly reviews of project milestones and costs with stakeholders, ensuring the accuracy and reasonableness of project budgets and resource allocations at each phase.</li>
+                </ul>
+                <h4>Cathay Life Insurance</h4>
+                <p>Data Analyst</p>
+                <ul>
+                    <li>Analyzed two million records from the Health Insurance Research Database (HIRD) to assess disease prevalence and medical utilization rates across diverse age groups and regions.</li>
+                    <li>Conducted a comparative analysis between HIRD data and official government statistics, demonstrating high representativeness.</li>
+                    <li>Identified and addressed data limitations, such as the absence of death certificates, by establishing innovative criteria for death determination that closely aligned with official records.</li>
+                    <li>Transformed HIRD data into actionable insights, enabling stakeholders to make data-driven decisions and tailor business strategies to meet the unique needs of different customer cohorts.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer container">
+        <div id="copyright">
+            &copy; 2025 Wen-Hao Chung. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // 先清掉所有 active
+          document.querySelectorAll(".nav li").forEach(li => li.classList.remove("active"));
+      
+          // 找到目前網址的檔名（如 resume.html）
+          const currentPage = window.location.pathname.split("/").pop();
+      
+          // 根據 href 配對加上 active
+          document.querySelectorAll(".nav li a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+              link.parentElement.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <script>
+        document.addEventListener('click', function (event) {
+            var toggle = document.querySelector('.navbar .btn-navbar');
+            var menu = document.querySelector('.navbar .nav-collapse');
+        
+            // 如果選單是展開的，並且點擊的不是選單或按鈕本身
+            if (menu.classList.contains('in') && !menu.contains(event.target) && !toggle.contains(event.target)) {
+                // 觸發收合
+                toggle.click();
+            }
+        });
+    </script>
+</body>
+</html>
