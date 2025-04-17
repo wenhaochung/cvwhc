@@ -13,20 +13,20 @@ body {
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 }
 
+
+
+/* <div class="container content"> 內容與 頂與底 的距離 */
 .content {
-    padding: 100px 0;
+    padding: 1px 0 100px 0;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-margin-top: 80px;
-  }
+
+
+
 .page-title {
     padding: 60px 0 30px;
     border-bottom: 2px solid #eee;
     margin-bottom: 40px;
-    
-    
 }
 
 h1, h2, h3 {
@@ -165,24 +165,7 @@ pre {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-@media (max-width: 767px) {
-    .profile-photo-container {
-        text-align: center;
-        padding-top: 40px;
-    }
-    
-    .profile-photo {
-        width: 180px;
-        height: 180px;
-        object-fit: cover;
-        object-position: center 10%; /* 手機版也往下移 */
-    }
-    
-    .span7, .span5 {
-        float: none;
-        width: 100%;
-    }
-}
+
 
 /* 新增 Russell 项目的特定样式 */
 .project-details h4 {
@@ -207,6 +190,11 @@ pre {
     background-color: #f8f9fa;
 }
 
+
+
+
+
+
 /* 响应式调整 */
 @media (max-width: 767px) {
     .project-details .span6 {
@@ -215,37 +203,41 @@ pre {
     }
 }
 
+@media (max-width: 767px) {
+    .profile-photo-container {
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        object-position: center 10%; /* 手機版也往下移 */
+    }
+    
+    .span7, .span5 {
+        float: none;
+        width: 100%;
+    }
+}
 
-/* 開 摺 自定義 details 樣式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 102%;
+    z-index: 999;
+  }
+  body {
+    padding-top: 80px; /* 根據 navbar 的高度調整，避免被蓋住 */
+  }
 
-  
-  summary.page-title {
-    cursor: pointer;
-    padding: 15px 20px;
-    font-size: 24px;
-    font-weight: bold;
-    list-style: none; /* 隱藏預設箭頭 */
-    position: relative;
-    transition: 0.3s;
-  }
-  
-
-  
-  /* 自定義箭頭樣式 */
-  summary.page-title::before {
-    content: '▶';
-    position: absolute;
-    right: 20px;
-    color: #666;
-    transition: transform 0.2s;
-  }
-  
-  details[open] summary.page-title::before {
-    transform: rotate(90deg);
-  }
-  
-  /* 內容區域樣式 */
-  .details-content {
-    padding: 0 20px 20px;
-    border-top: 1px solid #eee;
-  }
+@media (max-width: 767px) {
+    .navbar .brand {
+        display: block;
+        width: 100%;
+        text-align: center;
+        float: none;
+        margin: 0 auto;
+    }
+}
