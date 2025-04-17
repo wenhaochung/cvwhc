@@ -225,7 +225,7 @@ pre {
 .navbar {
     position: fixed;
     top: 0;
-    width: 102%;
+    width: 104%;
     z-index: 999;
   }
   body {
