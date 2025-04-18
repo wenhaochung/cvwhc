@@ -9,8 +9,7 @@ document.getElementById("predictButton").addEventListener("click", function() {
         repairHours: parseFloat(document.getElementById("repair_hours").value),
         repairComplexity: parseInt(document.getElementById("repair_complexity").value),
     };
-    fetch('http://localhost:5000/predict', {  // Updated to Fly.io URL
-    // fetch('https://cvwhc.fly.dev/predict', {  // Updated to Fly.io URL
+    fetch('https://cvwhc.fly.dev/predict', {  // Updated to Fly.io URL
         method: "POST",
         headers: {
             "Content-Type": "application/json"
