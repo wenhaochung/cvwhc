@@ -1,5 +1,6 @@
 /* styles.css */
 body {
+    /* TODO: Fix the route of the background image */
     background: url('../img/bg.png') repeat-x;
     background-color: #fff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
