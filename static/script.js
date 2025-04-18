@@ -9,7 +9,7 @@ document.getElementById("predictButton").addEventListener("click", function() {
         repair_hours: parseFloat(document.getElementById("repair_hours").value),
         repair_complexity: parseInt(document.getElementById("repair_complexity").value),
     };
-    fetch('http://127.0.0.1:5000/predict', {  // Flask 端點
+    fetch('https://cvwhc.fly.dev/predict', {  // Updated to Fly.io URL
         method: "POST",
         headers: {
             "Content-Type": "application/json"

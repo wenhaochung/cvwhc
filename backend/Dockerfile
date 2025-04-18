@@ -20,7 +20,11 @@ COPY logistic_model.pkl .
 COPY model_metrics.json .
 
 # Expose the port the app runs on
-EXPOSE 5000
+EXPOSE 8080
 
-# Command to run the application
-CMD ["python", "app.py"] 
+# Set environment variables
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=production
+
+# Command to run the application using gunicorn for production
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"] 
